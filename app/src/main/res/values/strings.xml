@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Libreta de Himnos</string>
     <string name="iraLista">Lista de Hinmos</string>
-    <string name="titulo1">RECUERDOS DE JOJANCITO</string>
+    <string name="titulo1">HIMNOS ESPECIALES JOJANCITO</string>
     <string name="listaHimnos"></string>
 </resources>
