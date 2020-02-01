@@ -37,12 +37,13 @@ public class mostrarHimno extends AppCompatActivity {
 
         himnoselec = (ListView)findViewById(R.id.listaHimnos);
 
-        final int selec = getIntent().getIntExtra("selecion",-1);
+        final int selec = getIntent().getIntExtra("selecion",-1);//forma para resivir un dato entero de otra actividad
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
 
         tituloHimno.setText(titulo);
         etLetra.setText(letra);
+
 
         play1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +86,8 @@ public class mostrarHimno extends AppCompatActivity {
                         break;
                     case 16:
                         break;
-                    case 17:
+                    case 17://Muy pronto vendra
+                        //codigo para el boton pausa y play
                         if (mp.isPlaying()){
                             mp.pause();
                             Toast.makeText(getApplication(),"PAUSA",Toast.LENGTH_LONG).show();
@@ -129,5 +131,6 @@ public class mostrarHimno extends AppCompatActivity {
 
 
     }
+
 
 }
