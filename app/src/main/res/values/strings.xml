@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Libreta de Himnos</string>
+    <string name="buscar">Nombre del Himno</string>
     <string name="iraLista">Lista de Hinmos</string>
     <string name="titulo1">HIMNOS ESPECIALES JOJANCITO</string>
+    <string name="nombrehimno"></string>
+    <string name="tituloHimno"></string>
     <string name="listaHimnos"></string>
+
 </resources>

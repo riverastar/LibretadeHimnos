@@ -3,22 +3,23 @@ package com.example.libretadehimnos;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class mostrarHimno extends AppCompatActivity {
-  private TextView etLetra, tituloHimno;
-  private MediaPlayer mp;
-  private ListView himnoselec;
-  private Button play1;
+    private TextView etLetra,totalTime,currentTime;
+    private MediaPlayer mp;
+    private Button play1;
+    private Handler handler;
+    private SeekBar pista;
+    private Runnable runnable;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +30,41 @@ public class mostrarHimno extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         //casteo de variables
-        tituloHimno = (TextView)findViewById(R.id.tituloHimno);
-        etLetra = (TextView)findViewById(R.id.etMostrar);
-        play1 = (Button)findViewById(R.id.play1);
-        mp = MediaPlayer.create(getApplication(),R.raw.muyprontovendra);
+        etLetra = (TextView) findViewById(R.id.etMostrar);
+        totalTime = (TextView) findViewById(R.id.totalTimer);
+        currentTime = (TextView) findViewById(R.id.currentTimer);
+        play1 = (Button) findViewById(R.id.play1);
 
-        himnoselec = (ListView)findViewById(R.id.listaHimnos);
+        mp = MediaPlayer.create(getApplication(), R.raw.muyprontovendra);
 
-        final int selec = getIntent().getIntExtra("selecion",-1);//forma para resivir un dato entero de otra actividad
+        mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+        handler = new Handler();
+        pista = (SeekBar) findViewById(R.id.seekBar);
+
+
+        final int selec = getIntent().getIntExtra("selecion", -1);//forma para resivir un dato entero de otra actividad
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
 
-        tituloHimno.setText(titulo);
+
         etLetra.setText(letra);
+        getSupportActionBar().setTitle(titulo);
+
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+
+            }
+        });
 
 
         play1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (selec){
+                switch (selec) {
                     case 0:
 
                         break;
@@ -86,18 +102,41 @@ public class mostrarHimno extends AppCompatActivity {
                         break;
                     case 16:
                         break;
-                    case 17://Muy pronto vendra
-                        //codigo para el boton pausa y play
-                        if (mp.isPlaying()){
-                            mp.pause();
-                            Toast.makeText(getApplication(),"PAUSA",Toast.LENGTH_LONG).show();
-                        }else{
-                            mp.start();
-                            Toast.makeText(getApplication(),"PLAY",Toast.LENGTH_LONG).show();
-                        }
+                    case 17:
+
+
                         break;
                     case 18:
-                        Toast.makeText(getApplication(),""+selec,Toast.LENGTH_LONG).show();
+                        //Muy pronto vendra
+                        //codigo para el boton pausa y play
+                        if (mp != null && mp.isPlaying()) {
+                            mp.pause();
+                        } else {
+                            mp.start();
+                            changeSeekbar();
+
+                            pista.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                                @Override
+                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                    if (fromUser) {
+                                        pista.setMax(mp.getDuration());
+                                        mp.seekTo(progress);
+                                        pista.setProgress(progress);
+                                        changeSeekbar();
+                                    }
+                                }
+                                @Override
+                                public void onStartTrackingTouch(SeekBar seekBar) {
+                                }
+
+                                @Override
+                                public void onStopTrackingTouch(SeekBar seekBar) {
+                                }
+                               });
+
+
+                             }
+
                         break;
                     case 19:
                         break;
@@ -105,7 +144,7 @@ public class mostrarHimno extends AppCompatActivity {
 
                         break;
                     case 21:
-                        Toast.makeText(getApplication(),""+selec,Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(), "" + selec, Toast.LENGTH_LONG).show();
                         break;
                     case 22:
                         break;
@@ -122,15 +161,42 @@ public class mostrarHimno extends AppCompatActivity {
                     case 28:
                         break;
                     case 29:
-                        Toast.makeText(getApplication(),""+selec,Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(), "" + selec, Toast.LENGTH_LONG).show();
                         break;
                 }
             }
+
+
+
+            private String createTimeLabel(int time) {
+                String timeLabel = "";
+                int min = time /100 / 60;
+                int sec = time /100 % 60;
+                timeLabel = min + ":";
+                if (min < 10) timeLabel += "0";
+                timeLabel += sec;
+                return timeLabel;
+            }
+
         });
 
 
 
-    }
 
+    }
+//codigo para correr seekbar
+    private void changeSeekbar() {
+        pista.setProgress(mp.getCurrentPosition());
+        pista.setMax(mp.getDuration());
+        if (mp.isPlaying()){
+            runnable = new Runnable() {
+                @Override
+                public void run() {
+                    changeSeekbar();
+                }
+            };
+            handler.postDelayed(runnable,1000);
+        }
+    }
 
 }

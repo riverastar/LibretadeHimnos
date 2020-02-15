@@ -8,29 +8,21 @@
 
     <ScrollView
         android:id="@+id/svLetra"
-        android:layout_width="397dp"
-        android:layout_height="656dp"
+        android:layout_width="match_parent"
+        android:layout_height="661dp"
+        android:layout_above="@+id/nav_view"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="6dp">
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tituloHimno"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
-                android:layout_weight="1"
-                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/etMostrar"
@@ -44,22 +36,48 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/play1"
-            android:layout_width="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PLAY" />
-    </LinearLayout>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/play1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="PLAY" />
+
+            <TextView
+                android:id="@+id/currentTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="00:00" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="6"/>
+
+            <TextView
+                android:id="@+id/totalTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="05:00" />
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 </RelativeLayout>

@@ -269,28 +269,18 @@ public class Lista extends AppCompatActivity {
         inflater.inflate(R.menu.overflow, menu);
         final MenuItem searchItem = menu.findItem(R.id.buscar);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-
             @Override
             public boolean onQueryTextSubmit(String query) {
-
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
-
-
                 adapter.getFilter().filter(newText);
-                return false;
+                return true;
             }
-
-
         });
-
         return super.onCreateOptionsMenu(menu);
     }
 
