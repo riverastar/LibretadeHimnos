@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mostrarHimno">
+    tools:context=".motordeBusqueda">
 
     <ScrollView
-        android:id="@+id/svLetra"
+        android:id="@+id/svMotor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/nav_view"
@@ -22,12 +22,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/etMostrar"
+                android:id="@+id/motorMostrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="#FFFFFA"
+                android:background="#FFFFFF"
                 android:textAlignment="center"
+                android:layout_margin="10dp"
                 android:textSize="18sp"
                 android:textStyle="italic" />
         </LinearLayout>
@@ -45,27 +45,27 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/play1"
+                android:id="@+id/playMotor"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="PLAY" />
 
             <TextView
-                android:id="@+id/currentTimer"
+                android:id="@+id/currentTiempo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="00:00" />
 
             <SeekBar
-                android:id="@+id/seekBar"
+                android:id="@+id/seekBarr"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="6"/>
 
             <TextView
-                android:id="@+id/totalTimer"
+                android:id="@+id/totalTimpo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -74,7 +74,6 @@
         </LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
-
 </RelativeLayout>
+
+

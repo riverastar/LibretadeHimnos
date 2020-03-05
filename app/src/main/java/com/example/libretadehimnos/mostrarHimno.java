@@ -1,8 +1,6 @@
 package com.example.libretadehimnos;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -12,7 +10,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-public class mostrarHimno extends AppCompatActivity {
+public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     private TextView etLetra,totalTime,currentTime;
     private MediaPlayer mp;
     private Button play1;
@@ -20,35 +18,34 @@ public class mostrarHimno extends AppCompatActivity {
     private SeekBar pista;
     private Runnable runnable;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_himno);
-
         //Codigo para habilitar la flecha de atras
-        Bundle bundle = getIntent().getExtras();
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //casteo de variables
         etLetra = (TextView) findViewById(R.id.etMostrar);
         totalTime = (TextView) findViewById(R.id.totalTimer);
         currentTime = (TextView) findViewById(R.id.currentTimer);
         play1 = (Button) findViewById(R.id.play1);
-
         mp = MediaPlayer.create(getApplication(), R.raw.muyprontovendra);
-
+        //revisar esto
         mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
         handler = new Handler();
         pista = (SeekBar) findViewById(R.id.seekBar);
 
-
         final int selec = getIntent().getIntExtra("selecion", -1);//forma para resivir un dato entero de otra actividad
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
-
+        //para colocar subtitulo
+        if (selec == 3){
+            getSupportActionBar().setSubtitle("Cumpleaños");
+        }
+        if (selec == 4){
+            getSupportActionBar().setSubtitle("Cumpleaños");
+        }
 
         etLetra.setText(letra);
         getSupportActionBar().setTitle(titulo);
@@ -104,7 +101,6 @@ public class mostrarHimno extends AppCompatActivity {
                         break;
                     case 17:
 
-
                         break;
                     case 18:
                         //Muy pronto vendra
@@ -154,15 +150,7 @@ public class mostrarHimno extends AppCompatActivity {
                         break;
                     case 25:
                         break;
-                    case 26:
-                        break;
-                    case 27:
-                        break;
-                    case 28:
-                        break;
-                    case 29:
-                        Toast.makeText(getApplication(), "" + selec, Toast.LENGTH_LONG).show();
-                        break;
+
                 }
             }
 
@@ -179,11 +167,7 @@ public class mostrarHimno extends AppCompatActivity {
             }
 
         });
-
-
-
-
-    }
+   }
 //codigo para correr seekbar
     private void changeSeekbar() {
         pista.setProgress(mp.getCurrentPosition());
@@ -198,5 +182,14 @@ public class mostrarHimno extends AppCompatActivity {
             handler.postDelayed(runnable,1000);
         }
     }
+//codigo detener musica al pulsar regresar
+    @Override
+    public void onBackPressed() {
+        if (mp.isPlaying()) {
+            mp.stop();
+        }
+        super.onBackPressed();
+    }
+
 
 }

@@ -39,7 +39,7 @@ public class Himno {
     }
     @Override
     public String toString() {
-        return id+"   "+himno;
+        return id+"  "+himno;
     }
 
 }
