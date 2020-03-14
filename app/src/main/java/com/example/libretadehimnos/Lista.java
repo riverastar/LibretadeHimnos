@@ -1,9 +1,7 @@
 package com.example.libretadehimnos;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
 import android.media.AudioManager;
@@ -17,12 +15,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Filterable;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -42,16 +37,13 @@ public class Lista extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Codigo para habilitar la flecha atras
-        Bundle bundle = getIntent().getExtras();
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         setContentView(R.layout.activity_lista);
 
         lvHimnos = (ListView) findViewById(R.id.listaHimnos);
         sI = (SearchView) findViewById(R.id.buscar);
         mp = MediaPlayer.create(getApplication(), R.raw.muyprontovendra);
-        pista = (SeekBar) findViewById(R.id.seekBar);
+        //pista = (SeekBar) findViewById(R.id.seekBar);
         play = (Button) findViewById(R.id.playMotor);
         mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
         lista = new ArrayList<Himno>();
@@ -292,7 +284,6 @@ public class Lista extends AppCompatActivity {
                 "No se la hora en el que el señor vendrá, de día o en oscuridad. Sera en el valle o en el mar, en la que Jesús vendrá."));
         adapter = new ArrayAdapter<Himno>(this,android.R.layout.simple_list_item_1,lista);
         lvHimnos.setAdapter(adapter);
-
         lvHimnos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -304,18 +295,16 @@ public class Lista extends AppCompatActivity {
                 intent.putExtra("titulo",titulo);
                 intent.putExtra("letra",letra);
                 intent.putExtra("selecion",selecion);
-
                 startActivity(intent);
             }
         });
-
     }
     //Metodo para mostrar y ocultar el menu y tambien incluye codigo para el motor de busqueda
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search, menu);
         inflater.inflate(R.menu.overflow, menu);
         final MenuItem searchItem = menu.findItem(R.id.buscar);
-
         final SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -632,4 +621,5 @@ public class Lista extends AppCompatActivity {
         });
         return true;
     }
+
 }

@@ -2,5 +2,7 @@
 <resources>
     <color name="colorPrimary">#9C27B0</color>
     <color name="colorPrimaryDark">#8E24AA</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#827717</color>
+    <color name="modoNocturno">#194963</color>
+    <color name="newColor">#fff176</color>
 </resources>
