@@ -27,7 +27,6 @@ private Button myButton;
 
         view = this.getWindow().getDecorView();
 
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         fondo = (LinearLayout) findViewById(R.id.conten1);
         myButton = (Button) findViewById(R.id.iraLista);
@@ -35,11 +34,9 @@ private Button myButton;
         //toolbar.inflateMenu(R.menu.overflow);
 
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
     }
-
-
-
     //Metodo para mostrar y ocultar el menu
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.overflow, menu);
