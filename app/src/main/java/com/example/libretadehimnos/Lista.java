@@ -303,7 +303,6 @@ public class Lista extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search, menu);
-        inflater.inflate(R.menu.overflow, menu);
         final MenuItem searchItem = menu.findItem(R.id.buscar);
         final SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

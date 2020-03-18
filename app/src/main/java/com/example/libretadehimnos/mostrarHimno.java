@@ -303,25 +303,5 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.overflow, menu);
-        MenuItem itemSwitch = menu.findItem(R.id.app_bar_switch);
-        itemSwitch.setActionView(R.layout.switch_item);
-        final Switch sw = (Switch) menu.findItem(R.id.app_bar_switch).getActionView().findViewById(R.id.action_switch);
-        view.setBackgroundResource(R.drawable.principaldia);
 
-        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (sw.isChecked()){
-                    Toast.makeText(getApplication(),"on",Toast.LENGTH_LONG).show();
-                    view.setBackgroundResource(R.drawable.principalnoct);
-
-                }else{
-                    view.setBackgroundResource(R.drawable.principaldia);
-                }
-            }
-        });
-        return true;
-    }
 }
