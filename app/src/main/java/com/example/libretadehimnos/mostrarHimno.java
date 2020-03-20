@@ -26,7 +26,7 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     private TextView etLetra,totalTime,currentTime;
     private double starTime = 0;
     private double finalTime = 0;
-    private MediaPlayer mp [] = new MediaPlayer[24];
+    private MediaPlayer mp [] = new MediaPlayer[26];
     private Button play;
     private Handler handler = new Handler();
     private SeekBar seekBar;
@@ -67,10 +67,12 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         mp[17] = MediaPlayer.create(this,R.raw.loquendo);
         mp[18] = MediaPlayer.create(this,R.raw.muyprontovendra);
         mp[19] = MediaPlayer.create(this,R.raw.loquendo);
+        mp[20] = MediaPlayer.create(this,R.raw.loquendo);
         mp[21] = MediaPlayer.create(this,R.raw.loquendo);
         mp[22] = MediaPlayer.create(this,R.raw.loquendo);
         mp[23] = MediaPlayer.create(this,R.raw.loquendo);
         mp[24] = MediaPlayer.create(this,R.raw.loquendo);
+        mp[25] = MediaPlayer.create(this,R.raw.loquendo);
 
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         setSupportActionBar(toolbar);
@@ -83,6 +85,13 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         sel = getIntent().getIntExtra("selecion", -1);//forma para recibir un dato entero de otra actividad
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
+
+        if (sel == 3){
+            getSupportActionBar().setSubtitle("Cumpleaños");
+        }
+        if (sel == 4){
+            getSupportActionBar().setSubtitle("Cumpleaños");
+        }
 
         etLetra.setText(letra);
         getSupportActionBar().setTitle(titulo);
@@ -102,11 +111,11 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
                         tocarHimnos();
                         break;
                     case 3:
-                        getSupportActionBar().setSubtitle("Cumpleaños");
+
                         tocarHimnos();
                         break;
                     case 4:
-                        getSupportActionBar().setSubtitle("Cumpleaños");
+
                         tocarHimnos();
                         break;
                     case 5:
@@ -169,6 +178,9 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
                         tocarHimnos();
                         break;
                     case 24:
+                        tocarHimnos();
+                        break;
+                    case 25:
                         tocarHimnos();
                         break;
                 }
@@ -267,11 +279,10 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Toast.makeText(getApplication(),"hola"+sel,Toast.LENGTH_LONG).show();
         if (item.getItemId() == android.R.id.home){
-            mp[0].pause(); mp[1].pause(); mp[2].pause(); mp[3].pause(); mp[4].pause(); mp[5].pause(); mp[6].pause(); mp[7].pause(); mp[8].pause(); mp[9].pause();
-            mp[10].pause(); mp[11].pause(); mp[12].pause(); mp[13].pause(); mp[14].pause(); mp[15].pause(); mp[16].pause(); mp[17].pause();
-            mp[18].pause(); mp[19].pause(); mp[20].pause(); mp[21].pause(); mp[22].pause(); mp[23].pause(); mp[24].pause();
+            mp[0].pause(); mp[1].pause(); mp[2].pause(); mp[3].pause(); mp[4].pause(); mp[5].pause(); mp[6].pause(); mp[7].pause();mp[8].pause();mp[9].pause();
+            mp[10].pause(); mp[11].pause(); mp[12].pause(); mp[13].pause(); mp[14].pause(); mp[15].pause(); mp[16].pause(); mp[17].pause();mp[18].pause();mp[19].pause();
+            mp[20].pause(); mp[21].pause(); mp[22].pause(); mp[23].pause(); mp[24].pause(); mp[25].pause();
             finish();
-
         }
         return super.onOptionsItemSelected(item);
     }
