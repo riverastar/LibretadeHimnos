@@ -25,7 +25,6 @@ public class Lista extends AppCompatActivity {
   private ListView lvHimnos;
   private ArrayAdapter<Himno> adapter;
   private ArrayList<Himno> lista;
-  private SearchView sI;
   private MediaPlayer mp;
   private Handler handler;
   private SeekBar pista;
@@ -41,11 +40,10 @@ public class Lista extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
 
         lvHimnos = (ListView) findViewById(R.id.listaHimnos);
-        sI = (SearchView) findViewById(R.id.buscar);
         mp = MediaPlayer.create(getApplication(), R.raw.muyprontovendra);
         //pista = (SeekBar) findViewById(R.id.seekBar);
         play = (Button) findViewById(R.id.playMotor);
-        mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
         lista = new ArrayList<Himno>();
         //lista de hinmos
         lista.add(new Himno(1,"ANGELES BLANCOS",

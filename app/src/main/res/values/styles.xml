@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:fontFamily">@font/petit_formal_script</item>
     </style>
     <!-- Base application theme. -->
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -21,6 +22,10 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
-    <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light"></style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">#ffff6cef</item>
+    </style>
 </resources>

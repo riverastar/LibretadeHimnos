@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            android:textColor="@color/colorAccent"
+            app:titleTextColor="@color/colorAccent"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name"/>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -76,8 +77,9 @@
                     android:background="@drawable/buttom_drawable_background"
                     android:onClick="onClinck"
                     android:text="@string/iraLista"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15dp"/>
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/aguafina_script"
+                    android:textSize="20dp"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="450dp"

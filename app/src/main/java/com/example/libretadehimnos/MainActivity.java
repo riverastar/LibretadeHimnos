@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 private Toolbar toolbar;
-private Window window;
-private View view;
 private Button myButton;
 
     @Override
@@ -29,12 +27,10 @@ private Button myButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //view = getLayoutInflater().inflate(R.layout.activity_mostrar_himno, null);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         myButton = (Button) findViewById(R.id.iraLista);
         //llamado del toolbar generico dos formas
         //toolbar.inflateMenu(R.menu.overflow);
-
         setSupportActionBar(toolbar);
         //mostrar icono en el tooolbar
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -53,7 +49,6 @@ private Button myButton;
         }else{
             sw.setChecked(false);
         }
-
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @SuppressLint("ResourceType")
             @Override
@@ -73,6 +68,7 @@ private Button myButton;
         Intent intent = getIntent();
         finish();
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     //Metodo para asignar las funciones correspondientes a las opciones del menu
@@ -92,8 +88,6 @@ private Button myButton;
     }
 
      public void onClinck(View view){
-        Drawable background = myButton.getBackground();
-        myButton.setBackgroundResource(R.color.newColor);
         Intent miIntent = new Intent(MainActivity.this,Lista.class);
         startActivity(miIntent);
 
