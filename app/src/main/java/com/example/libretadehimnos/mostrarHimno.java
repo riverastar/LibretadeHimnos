@@ -268,20 +268,18 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     });
     //codigo detener musica al pulsar regresar
     public void onBackPressed() {
-        Toast.makeText(getApplication(),"hola",Toast.LENGTH_LONG).show();
-        if (mp[0]!= null && mp[0].isPlaying()) {
-            mp[0].stop();
+        Toast.makeText(getApplication(),"hola"+sel,Toast.LENGTH_LONG).show();
+        if (mp[sel]!= null && mp[sel].isPlaying()) {
+            mp[sel].stop();
         }
         super.onBackPressed();
     }
     //codigo para manipular la flecha atras
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(getApplication(),"hola"+sel,Toast.LENGTH_LONG).show();
+
         if (item.getItemId() == android.R.id.home){
-            mp[0].pause(); mp[1].pause(); mp[2].pause(); mp[3].pause(); mp[4].pause(); mp[5].pause(); mp[6].pause(); mp[7].pause();mp[8].pause();mp[9].pause();
-            mp[10].pause(); mp[11].pause(); mp[12].pause(); mp[13].pause(); mp[14].pause(); mp[15].pause(); mp[16].pause(); mp[17].pause();mp[18].pause();mp[19].pause();
-            mp[20].pause(); mp[21].pause(); mp[22].pause(); mp[23].pause(); mp[24].pause(); mp[25].pause();
+            mp[sel].stop();
             finish();
         }
         return super.onOptionsItemSelected(item);

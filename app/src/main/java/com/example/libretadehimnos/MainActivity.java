@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,9 +19,12 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 private Toolbar toolbar;
 private Button myButton;
+private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ private Button myButton;
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         myButton = (Button) findViewById(R.id.iraLista);
+        url = "https://osvaldor300.wixsite.com/libretadehimnos";
         //llamado del toolbar generico dos formas
         //toolbar.inflateMenu(R.menu.overflow);
         setSupportActionBar(toolbar);
@@ -74,9 +79,11 @@ private Button myButton;
     //Metodo para asignar las funciones correspondientes a las opciones del menu
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.item1) {
+        if (id == R.id.pprivacidad) {
             Toast.makeText(this, "opcionsi1", Toast.LENGTH_SHORT).show();
-
+            Uri uri = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+            startActivity(intent);
         }if (id == R.id.item2) {
             Toast.makeText(this, "opcionsi1", Toast.LENGTH_SHORT).show();
         }if (id == R.id.item3) {
