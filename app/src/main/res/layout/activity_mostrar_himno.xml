@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,9 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorAccent"
-            app:layout_scrollFlags="scroll|enterAlways">
+            app:titleTextColor="@color/colorAccent">
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -27,18 +26,20 @@
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:background="@android:color/white">
+            android:background="@color/seeBar"
+            app:layout_scrollFlags="scroll|enterAlways">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/play1"
                     android:layout_width="30dp"
                     android:layout_height="47dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/currentTimer"
@@ -46,14 +47,13 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0:00"
-                    android:textColor="#8E24AA"/>
+                    android:textColor="@color/textPrincipal" />
 
                 <SeekBar
                     android:id="@+id/seekBar"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:thumbTint="#8E24AA" />
+                    android:layout_weight="6" />
 
                 <TextView
                     android:id="@+id/totalTimer"
@@ -61,27 +61,28 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="0:00"
-                    android:textColor="#8E24AA"/>
+                    android:textColor="@color/textPrincipal" />
             </LinearLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <TextView
-                android:id="@+id/etMostrar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textColor="#827717"
-                android:background="#f5f5f5"
-                android:fontFamily="@font/aguafina_script"
-                android:textStyle="italic"/>
-        </androidx.core.widget.NestedScrollView>
+        <TextView
+            android:id="@+id/etMostrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/back_text"
+            android:fontFamily="Arial"
+            android:paddingHorizontal="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/newColor"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

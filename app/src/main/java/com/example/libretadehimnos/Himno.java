@@ -1,9 +1,9 @@
 package com.example.libretadehimnos;
 
 public class Himno {
-   private int id;
-   private String himno;
-   private String letra;
+    private int id;
+    private String himno;
+    private String letra;
 
     public Himno(int i, String cile) {
     }
@@ -37,9 +37,10 @@ public class Himno {
     public void setLetra(String letra) {
         this.letra = letra;
     }
+
     @Override
     public String toString() {
-        return id+"  "+himno;
+        return id + "  " + himno;
     }
 
 }

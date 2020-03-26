@@ -18,14 +18,17 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/petit_formal_script</item>
     </style>
+
     <style name="SplashTheme" parent="AppTheme.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
 
     </style>
+
     <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light">
-        <item name="colorAccent">#ffff6cef</item>
+
     </style>
 </resources>

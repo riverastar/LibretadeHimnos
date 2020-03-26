@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,48 +16,51 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorAccent"
-            app:layout_scrollFlags="scroll|enterAlways">
+            app:titleTextColor="@color/colorAccent">
 
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/seeBar"
             app:layout_scrollFlags="scroll|enterAlways">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/playMotor"
                     android:layout_width="40dp"
                     android:layout_height="60dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/mcurrentTiempo"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="0:00" />
+                    android:text="0:00"
+                    android:textColor="@color/textPrincipal" />
 
                 <SeekBar
                     android:id="@+id/seekBarr"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="7"/>
+                    android:layout_weight="6" />
 
                 <TextView
                     android:id="@+id/mtotalTimpo"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="0:00" />
+                    android:text="0:00"
+                    android:textColor="@color/textPrincipal" />
 
             </LinearLayout>
 
@@ -70,20 +72,19 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <TextView
-                android:id="@+id/motorMostrar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:textAlignment="center"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/aguafina_script"
-                android:textSize="18sp"
-                android:textStyle="italic" />
-
+        <TextView
+            android:id="@+id/motorMostrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/back_text"
+            android:fontFamily="Arial"
+            android:paddingHorizontal="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/newColor"
+            android:textSize="18sp"
+            android:textStyle="italic" />
     </androidx.core.widget.NestedScrollView>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

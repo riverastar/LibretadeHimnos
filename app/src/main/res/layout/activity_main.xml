@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,10 +15,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            app:titleTextColor="@color/colorAccent"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/app_name"/>
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorAccent" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -27,30 +24,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <LinearLayout
             android:id="@+id/conten1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1">
+
                 <TextView
                     android:id="@+id/versiculo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="15dp"
-                    android:padding="20dp"
                     android:background="@drawable/back_text"
-                    android:textAlignment="center"
+                    android:padding="20dp"
                     android:text="@string/versiculo"
-                    android:textColor="#827717"
-                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:textColor="@color/newColor"
                     android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,11 +58,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/titulo1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/petit_formal_script"
                     android:gravity="center_horizontal"
                     android:text="@string/titulo1"
@@ -75,21 +76,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/buttom_drawable_background"
+                    android:fontFamily="Arial"
                     android:onClick="onClinck"
                     android:text="@string/iraLista"
                     android:textColor="@color/colorAccent"
-                    android:fontFamily="@font/aguafina_script"
-                    android:textSize="20dp"/>
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="450dp"
+                    android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/mode"/>
-
+                    android:src="@drawable/mode" />
             </LinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

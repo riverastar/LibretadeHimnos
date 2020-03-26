@@ -3,6 +3,7 @@ package com.example.libretadehimnos;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -23,16 +24,17 @@ import java.util.concurrent.TimeUnit;
 public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     public View view;
     private Toolbar toolbar;
-    private TextView etLetra,totalTime,currentTime;
+    private TextView etLetra, totalTime, currentTime;
     private double starTime = 0;
     private double finalTime = 0;
-    private MediaPlayer mp [] = new MediaPlayer[26];
+    private MediaPlayer mp[] = new MediaPlayer[26];
     private Button play;
     private Handler handler = new Handler();
     private SeekBar seekBar;
     private Runnable runnable;
     private int sel = 0;
     public static int oneTimeOnly = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,32 +49,32 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         play.setBackgroundResource(R.drawable.play);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         //llenar vector
-        mp[0] = MediaPlayer.create(this,R.raw.angelesblancos);
-        mp[1] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[2] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[3] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[4] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[5] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[6] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[7] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[8] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[9] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[10] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[11] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[12] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[13] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[14] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[15] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[16] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[17] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[18] = MediaPlayer.create(this,R.raw.muyprontovendra);
-        mp[19] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[20] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[21] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[22] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[23] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[24] = MediaPlayer.create(this,R.raw.loquendo);
-        mp[25] = MediaPlayer.create(this,R.raw.loquendo);
+        mp[0] = MediaPlayer.create(this, R.raw.angelesblancos);
+        mp[1] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[2] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[3] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[4] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[5] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[6] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[7] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[8] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[9] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[10] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[11] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[12] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[13] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[14] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[15] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[16] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[17] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[18] = MediaPlayer.create(this, R.raw.muyprontovendra);
+        mp[19] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[20] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[21] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[22] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[23] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[24] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[25] = MediaPlayer.create(this, R.raw.loquendo);
 
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         setSupportActionBar(toolbar);
@@ -86,10 +88,10 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
 
-        if (sel == 3){
+        if (sel == 3) {
             getSupportActionBar().setSubtitle("Cumpleaños");
         }
-        if (sel == 4){
+        if (sel == 4) {
             getSupportActionBar().setSubtitle("Cumpleaños");
         }
 
@@ -186,21 +188,21 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
                 }
             }
         });
- }
+    }
 
- private void tocarHimnos(){
+    private void tocarHimnos() {
 
         if (mp[sel] != null && mp[sel].isPlaying()) {
             mp[sel].pause();
             play.setBackgroundResource(R.drawable.pausa);
-        }else{
+        } else {
             Toast.makeText(getApplication(), "" + sel, Toast.LENGTH_LONG).show();
             mp[sel].start();
             play.setBackgroundResource(R.drawable.corriendo);
             changeSeekbar();
             finalTime = mp[sel].getDuration();
             starTime = mp[sel].getCurrentPosition();
-            if (oneTimeOnly == 0){
+            if (oneTimeOnly == 0) {
                 seekBar.setMax((int) finalTime);
                 oneTimeOnly = 1;
             }
@@ -214,9 +216,11 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
                         changeSeekbar();
                     }
                 }
+
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
                 }
+
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
                 }
@@ -224,16 +228,16 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         }
         totalTime.setText(String.format("%d:%d",
                 TimeUnit.MILLISECONDS.toMinutes((long) finalTime),
-                TimeUnit.MILLISECONDS.toSeconds((long) finalTime)-
-                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long)finalTime)))
+                TimeUnit.MILLISECONDS.toSeconds((long) finalTime) -
+                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long) finalTime)))
         );
         currentTime.setText(String.format("%d:%d",
                 TimeUnit.MILLISECONDS.toMinutes((long) starTime),
-                TimeUnit.MILLISECONDS.toSeconds((long) starTime)-
-                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long)starTime)))
+                TimeUnit.MILLISECONDS.toSeconds((long) starTime) -
+                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long) starTime)))
         );
-        seekBar.setProgress((int)starTime);
-        handler.postDelayed(UpdateSongTime,1000);
+        seekBar.setProgress((int) starTime);
+        handler.postDelayed(UpdateSongTime, 1000);
 
     }
 
@@ -241,14 +245,14 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     private void changeSeekbar() {
         seekBar.setProgress(mp[sel].getCurrentPosition());
         seekBar.setMax(mp[sel].getDuration());
-        if (mp[sel].isPlaying()){
+        if (mp[sel].isPlaying()) {
             runnable = new Runnable() {
                 @Override
                 public void run() {
                     changeSeekbar();
                 }
             };
-            handler.postDelayed(runnable,1000);
+            handler.postDelayed(runnable, 1000);
         }
     }
 
@@ -259,26 +263,28 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
             starTime = mp[sel].getCurrentPosition();
             currentTime.setText(String.format("%d:%d",
                     TimeUnit.MILLISECONDS.toMinutes((long) starTime),
-                    TimeUnit.MILLISECONDS.toSeconds((long) starTime)-
-                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long)starTime)))
+                    TimeUnit.MILLISECONDS.toSeconds((long) starTime) -
+                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long) starTime)))
             );
-            seekBar.setProgress((int)starTime);
-            handler.postDelayed(this,1000);
+            seekBar.setProgress((int) starTime);
+            handler.postDelayed(this, 1000);
         }
     });
+
     //codigo detener musica al pulsar regresar
     public void onBackPressed() {
-        Toast.makeText(getApplication(),"hola"+sel,Toast.LENGTH_LONG).show();
-        if (mp[sel]!= null && mp[sel].isPlaying()) {
+        Toast.makeText(getApplication(), "hola" + sel, Toast.LENGTH_LONG).show();
+        if (mp[sel] != null && mp[sel].isPlaying()) {
             mp[sel].stop();
         }
         super.onBackPressed();
     }
+
     //codigo para manipular la flecha atras
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             mp[sel].stop();
             finish();
         }

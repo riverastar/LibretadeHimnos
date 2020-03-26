@@ -2,7 +2,10 @@
 <resources>
     <color name="colorPrimaryDark">#8E24AA</color>
     <color name="colorPrimary">#9C27B0</color>
+    <color name="seeBar">#f0f0f1</color>
     <color name="colorAccent">#ffffff</color>
-    <color name="newColor">#fff176</color>
+    <color name="newColor">#827717</color>
     <color name="colorBackground">#ffffff</color>
+    <color name="textPrincipal">#000000</color>
+    <color name="fondoText">#f5f5f5</color>
 </resources>
