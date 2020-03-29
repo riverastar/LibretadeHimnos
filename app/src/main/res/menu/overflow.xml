@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/app_bar_switch"
-        android:title="Switch"
+        android:title="@string/app_bar_switch"
         app:actionLayout="@layout/switch_item"
         app:showAsAction="always" />
     <item
         android:id="@+id/pprivacidad"
-        android:title="Politicas de Privacidad"
+        android:title="@string/pprivacidad"
         app:showAsAction="never" />
     <item
         android:id="@+id/item2"
-        android:title="Acerca de..."
+        android:title="@string/item2"
         app:showAsAction="never" />
     <item
         android:id="@+id/item3"
-        android:title="Opciones"
+        android:title="@string/item3"
         app:showAsAction="never">
         <menu>
             <item

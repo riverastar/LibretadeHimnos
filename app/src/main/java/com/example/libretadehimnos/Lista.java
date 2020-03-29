@@ -59,39 +59,21 @@ public class Lista extends AppCompatActivity {
                         "\n" + "Coro" + "\n" +
                         "Hace mucho que se fue, viene pronto yo lo sé, a llevarme allá con él y cuando en cielo este mi corona allí tendré. Yo tendré mi corona y tú, no quieres también tener la tuya; si obedeces tendrás con Jesús, la corona de vida segura." +
                         "\n" + "II" + "\n" +
-                        "Oh cuan dulce y gloriosa promesa es vivir con Jesús en el cielo, si aquí no he tenido riquezas, seré rico con cristo en los cielos, mi riquezas será vida eterna cuando cristo me tenga en su reino." +
+                        "Oh cuan dulce y gloriosa promesa es vivir con Jesús en el cielo, si aquí no he tenido riquezas, seré rico con Crísto en los cielos, mi riquezas será vida eterna cuando cristo me tenga en su reino." +
                         "\n" + "III" + "\n" +
                         "Cristo vino a liberar la batalla, a lucharla a nuestro favor, dejo dicho sigan mis pisadas; que al final tendrán su galardón, en su reino prepara morada para ti, para mí pecador."));
         lista.add(new Himno(3, "CONSEJO DIVINO",
                 "I" + "\n" +
-                        "No vagues por el mundo buscado consolarte, porque seguramente la paz no encontraras, amigo ven a Cristo; él quiere consolarte, él te dará la vida que no se acabará." +
+                        "No vagues por el mundo buscado consolarte porque seguramente la paz no encontraras, amigo ven a Cristo; él quiere consolarte, él te dará la vida que no se acabará." +
                         "\n" + "Coro" + "\n" +
                         "Oh señor has tu voluntad quiero yo no ofenderte más." +
                         "\n" + "II" + "\n" +
                         "La noche esta dormida, el mundo silencioso, la luna y las estrellas; nos brindan claridad, allá en la lejanía vamos a predicar que Cristo es el camino, la vida y la verdad." +
                         "\n" + "III" + "\n" +
-                        "La venida de Cristo, está ya muy cercana, por eso amigo mío no debes de temer. Y nadie está seguro si llegara en la noche, en una mañana o un atardecer." +
-                        "\n" + "IV" + "\n" +
-                        "Tampoco estas seguro si tengas larga vida o si el ultimo dia ya muy cercano esta, no sabes si te."));
-        lista.add(new Himno(4, "SI ESTAS CUMPLIENDO",
-                "I" + "\n" +
-                        "Si estas cumpliendo un año más de vida, te deseamos que Dios te bendiga (Bis). Que permanezcas muy firme y muy fiel, que no desmayes y tengas valor y que permitas que siempre con él, este tu alma y tu corazón" +
-                        "\n" + "II" + "\n" +
-                        "Si estas cumpliendo un año más de vida, te deseamos que Dios te bendiga, que no te falte su gracia y su guía y que adelante con Cristo tu sigas." +
-                        "\n" + "III" + "\n" +
-                        "Le pido a Dios que te deje vivir, en este mundo muchos años más, y que la pases siempre muy feliz, que no te falte la dicha y las paz."));
-        lista.add(new Himno(5, "QUE EL SEÑOR TE CONCEDA",
-                "I" + "\n" +
-                        "Alabanzas sean dadas al cielo, por los años que vas a cumplir; nos gozamos por tus cumpleaños, porque Dios te dará bendición." +
-                        "\n" + "II" + "\n" +
-                        "De los cielos tendrás toda lluvia, abundancia de gozo y de paz. El señor que es la fuente de vida, te bendiga y te guarde en su amor." +
-                        "\n" + "Coro" + "\n" +
-                        "Que el señor te conceda en tu vida, serle fiel hasta el día final. Cuando el venga tendrás tu corona que de gloria Jesús te dará." +
-                        "\n" + "II" + "\n" +
-                        "Que en el año que empieza tu tengas bendiciones del cielo de verdad, que adelante con Cristo tu sigas hasta el día de la eternidad." +
-                        "\n" + "III" + "\n" +
-                        "Cumpleaños feliz, te deseamos a tí, que el señor te bendiga, cumpleaños feliz."));
-        lista.add(new Himno(6, "CRISTO HALLOME",
+                        "La venida de Cristo, está ya muy cercana, por eso amigo mío no debes de temer. Y nadie está seguro si llegara en la noche o en una mañanita o en un atardecer."));
+                        //"\n" + "IV" + "\n" +
+                        //"Tampoco estas seguro si tengas larga vida o si el ultimo dia ya muy cercano esta, no sabes si te."));
+        lista.add(new Himno(4, "CRISTO HALLOME",
                 "I" + "\n" +
                         "Cristo hallo me en la miseria y el pecado, lleno estaba el corazón de iniquidad, más Cristo abrió sus brazos y amoroso; guio mis pasos por la senda de la verdad." +
                         "\n" + "Coro" + "\n" +
@@ -100,32 +82,40 @@ public class Lista extends AppCompatActivity {
                         "Cada día mi Jesús me da más fuerza hoy, entiendo su lenguaje Arrobador; porque vino del cielo a salvarme, lo sabre tan solo halla en su mansión." +
                         "\n" + "III" + "\n" +
                         "Yo quisiera hablarles del amor de Cristo; pues en él halle un amigo fuerte y fiel por su gracia transformo mi vida entera, todo lo que soy aquí, lo debo a él."));
-        lista.add(new Himno(7, "CUANTO DOLOR",
+        lista.add(new Himno(5, "CUANTO DOLOR",
                 "I" + "\n" +
-                        "Cuanto dolor tu sufriste por mi sobre la cruz del calvario Jesús; por los pecados que yo cometí, llevas mi afrenta y dolorosa." +
+                        "Cuanto dolor tu sufriste por mi sobre la cruz del calvario Jesús;" +
+                        "\n" +
+                        "por los pecados que yo cometí, llevas mi afrenta y dolor(Bis)." +
                         "\n" + "II" + "\n" +
-                        "Nadie en el mundo podrá comparar el gran amor divino, Jesús vino del cielo para demostrar; que él, de este mundo es la luz." +
+                        "Nada en el mundo podrá comparar el gran amor del divino Jesús," +
+                        "\n" +
+                         "vino del cielo para demostrar; que él, de este mundo es la luz(Bis)." +
                         "\n" + "III" + "\n" +
-                        "Quiero llorar por mis culpas señor; al ver tus manos sangrantes por mí, esa corona de espinas, Oh Dios sobre el excelso Rabí." +
+                        "Quiero llorar por mis culpas señor; al ver tus manos sangrientas por mí," +
+                        "\n" +
+                        "esa corona de espinas Oh Dios, sobre el excelso Rabí(Bis)." +
                         "\n" + "IV" + "\n" +
-                        "Mirar tus manos no quiero yo más, porque sangrantes y heridas se ven esas tus manos, tan llenas de paz, claman a Dios tu bien."));
-        lista.add(new Himno(8, "DIA TAN GRANDE",
+                        "Mirar tus manos no quiero yo más, porque sangrientas y heridas se ven," +
+                        "\n" +
+                        "esas tus manos tan llenas de paz, claman a Dios por mi bien(Bis)."));
+        lista.add(new Himno(6, "DIA TAN GRANDE",
                 "I" + "\n" +
                         "Día tan grande no puedo olvidar, día de gozo sin par, cuando en tinieblas al verme andar, Cristo me quiso salvar. Gran compasión tuvo Cristo de mí; de gozo y paz me lleno, quito la sombra, me dio plena gloria, la noche en día cambio." +
                         "\n" + "Coro" + "\n" +
-                        "Dios descendio y de gloria me lleno cuando Jesus por gracia me salvo, fui ciego y me hizo ver y por gracia renacer. Dios descendio y de gloria me lleno." +
+                         "Dios descendio y de gloria me lleno cuando Jesus por gracia me salvo, fui ciego me hizo ver y por gracia renacer. Dios descendio y de gloria me lleno." +
                         "\n" + "II" + "\n" +
-                        "Nací de nuevo en virtud de Jesús, a la familia de Dios, de las tinieblas pase a la luz, para seguirle en pos, él me prepara un bello rincón, en la mansión celestial, justificado yo siempre alabo su nombre bendito eternal." +
+                        "Nací de nuevo en virtud de Jesús, a la familia de Dios, de las tinieblas pase a la luz, para seguirle en pos, él me prepara un bello rincón, en la mansión celestial, justificado por siempre alabo su nombre bendito eternal." +
                         "\n" + "III" + "\n" +
                         "Tengo esperanza de gloria eternal, me regocijo en Jesús, siempre recuerdo con fé y gratitud al contemplarle en la cruz bendito sea, mi Padre y Dios que cuando vine por fé fui adoptado por Cristo el amado, loores por siempre daré."));
-        lista.add(new Himno(9, "DAME LA VICTORIA",
+        lista.add(new Himno(7, "DAME LA VICTORIA",
                 "I" + "\n" +
                         "Dame la victoria te lo pido mi señor; dame la victoria, no quiero más dolor, que la paz del cielo me llene al andar y que tu justicia me cubra al caminar." +
                         "\n" + "Coro" + "\n" +
                         "Dame la victoria en el nombre de Jesús, Dame la victoria, yo quiero ver tu luz y cuando tu vengas en las nubes, te veré y en tu morada siempre estaré." +
                         "\n" + "II" + "\n" +
                         "Tengo aflicciones que no sé cómo enfrentar, tengo tentaciones que me cuesta superar; pero tú me muestras en tí tengo poder, porque cambias todos los deseos de mi ser."));
-        lista.add(new Himno(10, "DIVINO COMPAÑERO",
+        lista.add(new Himno(8, "DIVINO COMPAÑERO",
                 "I" + "\n" +
                         "Divino compañero de camino; tu presencia siento yo al caminar, pero al verme disipado por las sombras, yo siento luz, la luz divina de tu amor." +
                         "\n" + "Coro" + "\n" +
@@ -134,14 +124,14 @@ public class Lista extends AppCompatActivity {
                         "Contigo mi jornada se hace corta, habrá luz y el sol no fatigará. En el mar las olas se enfurecen, tu sobre ellas majestuoso andarás." +
                         "\n" + "III" + "\n" +
                         "La noche se aproxima tenebrosa, y en ella el tentador acechara, no me dejes solo en el camino, ayúdame, ayúdame, hasta llegar."));
-        lista.add(new Himno(11, "EN EL SANTUARIO CELESTIAL",
+        lista.add(new Himno(9, "EN EL SANTUARIO CELESTIAL",
                 "I" + "\n" +
                         "Hoy me acerco a tu trono mi señor, quiero entrar en el santuario celestial; donde está mi abogado intercesor Jesucristo, que ministra ahí, por mí, que mi oración ascienda ante tu altar como incienso agradable a ti señor, que mi vida entera tu puedas cambiar con la gracia y la justicia de tu amor." +
                         "\n" + "Coro" + "\n" +
                         "Purifícame con la sangre del cordero redentor, que la paz de Dios llene mi alma entera y mi corazón, Jesucristo mora en mí, quiero hacer tu voluntad." +
                         "\n" + "II" + "\n" +
                         "En el juicio ante el trono celestial, ya no mires mi pecado, ni mi maldad, solo más a Jesús en mi lugar, que me ayuda en mi gran necesidad, que el perdón que solo tú puedes dar, que me amas y me aceptas como soy, me transforma por la gracia de Jesús, y tu ley en mi vivir puedas guardar."));
-        lista.add(new Himno(12, "ESPINAS QUE DAN ROSAS",
+        lista.add(new Himno(10, "ESPINAS QUE DAN ROSAS",
                 "I" + "\n" +
                         "Punzantes los abrojos del camino; nos vienen otra vez a confirmar, indica de este modo al peregrino que el mundo no podrá ser nuestro hogar." +
                         "\n" + "Coro" + "\n" +
@@ -150,14 +140,14 @@ public class Lista extends AppCompatActivity {
                         "En el poder de Dios hay eficiencia para llevar la cruz con humildad, él dice que nos bastara su gloria en la dura y en la cruel adversidad." +
                         "\n" + "III" + "\n" +
                         "La dura tentación nos aprovecha, nos viene por el cielo a confirmar, quisiera nuestra alma brisa en brecha y triunfante a la cumbre remontar."));
-        lista.add(new Himno(13, "FIRME ESTARE",
+        lista.add(new Himno(11, "FIRME ESTARE",
                 "I" + "\n" +
                         "Cristo guarda siempre; puedo en él confiar no me deja nunca, puedo en él confiar. Cristo es la roca eterna de los siglos, firme estaré." +
                         "\n" + "Coro" + "\n" +
                         "Nada no nada me ha de mover (Bis) Cristo es la roca eterna de los siglos, firme estaré. Fuerte Jesucristo puedo en el confiar, todo me ha provisto, puedo en el confiar, Cristo es la roca eterna de los siglos, firme estaré." +
                         "\n" + "II" + "\n" +
                         "Muchos me abandonan, puedo en el confiar. Otros me engañan, puedo en el confiar. Cristo es la roca eterna de los siglos, firme estaré."));
-        lista.add(new Himno(14, "JUVENTUD",
+        lista.add(new Himno(12, "JUVENTUD",
                 "I" + "\n" +
                         "¡Juventud, juventud! joven pueblo de Dios; el señor te llama hoy a servir, tu belleza, tu fuerza, tu valor quiere el marcharemos animados por doquier." +
                         "\n" + "Coro" + "\n" +
@@ -168,16 +158,16 @@ public class Lista extends AppCompatActivity {
                         "Si hay luchas y fuerzas tu avanza con fé, si Satán intenta todo derrumbar, no olvides Cristo vela y tus pasos siempre ve, gran victoria contra el mal haz de ganar." +
                         "\n" + "IV" + "\n" +
                         "¡Juventud, juventud! pronto vuelve el Señor, proclamad este mensaje sin tardar, consagra tu ser, cuerpo alma y corazón, pon tu vida entera sobre tu altar."));
-        lista.add(new Himno(15, "LUZ DE LA MAÑANA",
+        lista.add(new Himno(13, "LUZ DE LA MAÑANA",
                 "I" + "\n" +
-                        "Luz de la mañana cual borada bella brilla las estrellas con toda claridad o hermano despierta mira el poema que el Dios infinito otro día nos da." +
+                        "Luz de la mañana cual borada bella, brillan las estrellas con toda claridad, ¡oh hermano despierta! mira el poema, que el Dios infinito otro día nos da." +
                         "\n" + "II" + "\n" +
-                        "Ya cantan las aves trinos de alegría, ya esparcen las flores su aroma sin par murmuran las fuentes todo el santo día y unidos se elevan al Dios celestial." +
+                        "Ya cantan las aves himnos de alegría, ya esparcen las flores su aroma sin par, murmuran las fuentes, en el santo día, que el Dios infinito otro dia nos dá." +
                         "\n" + "III" + "\n" +
-                        "Cuando Cristo llame despertar del sueño, venid a mi reino, santos a gozar, surgirán los muertos de gloria cubiertos, los que estén despiertos se transformaran." +
+                        "Cuando Cristo llame despertar del sueño, venid a mi reino santos a gozar, surgirán los muertos de gloria cubiertos, los que estén despiertos se transformaran." +
                         "\n" + "IV" + "\n" +
-                        "Entre blancas nubes, nos verán que suben, cuando entre querubines nos podrán mirar o que gran consuelo, ir con él al cielo y estar en su reino por la eternidad."));
-        lista.add(new Himno(16, "LA MAÑANA GLORIOSA",
+                        "Entre blancas nubes, sentirán que suben y entre querubines por la santidad, ¡oh que gran consuelo! ir con él al cielo y estar en su reino por la eternidad."));
+        lista.add(new Himno(14, "LA MAÑANA GLORIOSA",
                 "I" + "\n" +
                         "Cuan gloriosa será la mañana, cuando venga Jesús el salvador, las naciones unidas como hermanas, bienvenida daremos al señor." +
                         "\n" + "Coro" + "\n" +
@@ -186,7 +176,7 @@ public class Lista extends AppCompatActivity {
                         "Esperemos la mañana gloriosa, para dar la bienvenida al Dios de amor, donde todo será color de rosa, con la santa fragancia del señor." +
                         "\n" + "III" + "\n" +
                         "El cristiano fiel y verdadero y también el obrero de valor y la iglesia esposa del cordero, estará en los brazos del señor."));
-        lista.add(new Himno(17, "LLEVAME SEÑOR",
+        lista.add(new Himno(15, "LLEVAME SEÑOR",
                 "I" + "\n" +
                         "Llévame señor a donde vaya, cuídame señor del peligro, líbrame de todo mal, guíame a la salvación." +
                         "\n" + "Coro" + "\n" +
@@ -195,7 +185,7 @@ public class Lista extends AppCompatActivity {
                         "Si el señor está conmigo, yo no temo porque él es mi escudo y mi sostén, si estoy en tribulación me sostiene el señor." +
                         "\n" + "III" + "\n" +
                         "Yo no quiero estar en este mundo, quiero ir a ese bello hogar, la promesa él nos dio y al cielo nos llevara."));
-        lista.add(new Himno(18, "MANSION GLORIOSA",
+        lista.add(new Himno(16, "MANSION GLORIOSA",
                 "I" + "\n" +
                         "Mansión gloriosa, hay allá en los cielos, do las maldades; nunca entraran cada tristeza cambiara en consuelo y en dulce canto el dolor y afán." +
                         "\n" + "Coro" + "\n" +
@@ -204,7 +194,7 @@ public class Lista extends AppCompatActivity {
                         "En este mundo predomina el llanto, somos sujetos al dolor fatal, más en el cielo cesará el quebranto y por los siglos nunca habrá más mal." +
                         "\n" + "III" + "\n" +
                         "Amigo mío cuanto anhelo yo verte libre de pena y de tentación, a Jesucristo debes ya entregarte, tendrás también una bella mansión."));
-        lista.add(new Himno(19, "MUY PRONTO VENDRA",
+        lista.add(new Himno(17, "MUY PRONTO VENDRA",
                 "I" + "\n" +
                         "Muy pronto vendrá, muestro amado y buen salvador. El mundo vera que es un juez y que ya no hay perdón." +
                         "\n" + "Coro" + "\n" +
@@ -213,7 +203,7 @@ public class Lista extends AppCompatActivity {
                         "Venid, si venid, dice Cristo al que vagando va, yo te hare vivir, en la patria de la eternidad." +
                         "\n" + "III" + "\n" +
                         "Mira que el pastor; quiere ovejas para su redil, la puerta el abrió y si quieres hoy puedes seguir."));
-        lista.add(new Himno(20, "POR LA MAÑANA",
+        lista.add(new Himno(18, "POR LA MAÑANA",
                 "I" + "\n" +
                         "Por la mañana yo dirijo mi alabanza, a Dios que ha sido y es mi única esperanza, por la mañana yo le invoco con el alma y le suplico que me dé su dulce calma. El nos escucha pues nos ama tanto y nos alivia de cualquier quebranto, nos da su mano poderosa y fuerte, para aliviarnos de la misma muerte." +
                         "\n" + "II" + "\n" +
@@ -222,7 +212,18 @@ public class Lista extends AppCompatActivity {
                         "Brilla su lumbre bienhechora mientras duermo, pone su mano sobre mi si estoy enfermo, me fortalece y me alienta, con el sueño pues es mi Dios, mi redentor y él es mi dueño y al despertar por la mañana, siento que Dios invade mi alma y pensamiento veo a Jesús mi redentor amado por mis pecados en la cruz clavo." +
                         "\n" + "IV" + "\n" +
                         "Veo la sangre de sus manos que han brotado veo la sangre borbollando en su costado una corona de espina en su frente, la multitud escarneciéndole insolente pero que dicha cuando al cielo sube lleno de gloria y majestuosa nube."));
-        lista.add(new Himno(21, "SIN MADRE",
+        lista.add(new Himno(19, "QUE EL SEÑOR TE CONCEDA",
+                "I" + "\n" +
+                        "Alabanzas sean dadas al cielo, por los años que vas a cumplir; nos gozamos por tus cumpleaños, porque Dios te dará bendición." +
+                        "\n" + "II" + "\n" +
+                        "De los cielos tendrás toda lluvia, abundancia de gozo y de paz. El señor que es la fuente de vida, te bendiga y te guarde en su amor." +
+                        "\n" + "Coro" + "\n" +
+                        "Que el señor te conceda en tu vida, serle fiel hasta el día final. Cuando el venga tendrás tu corona que de gloria Jesús te dará." +
+                        "\n" + "II" + "\n" +
+                        "Que en el año que empieza tu tengas bendiciones del cielo de verdad, que adelante con Cristo tu sigas hasta el día de la eternidad." +
+                        "\n" + "III" + "\n" +
+                        "Cumpleaños feliz, te deseamos a tí, que el señor te bendiga, cumpleaños feliz."));
+        lista.add(new Himno(20, "SIN MADRE",
                 "I" + "\n" +
                         "Yo pienso en los niños, que no tienen madre y la tristeza grande que llevan en el alma, quisiera que pudieran en este día de fiesta, sentir lo que yo siento." +
                         "\n" + "Coro" + "\n" +
@@ -233,15 +234,22 @@ public class Lista extends AppCompatActivity {
                         "Señor yo te agradezco, porque me has concedido, de tener siempre cerca, a mi madre tan querida, te pido que protejas a tantos niños solos sin el calor de hogar." +
                         "\n" + "IV" + "\n" +
                         "Mama yo te quiero, tú eres mi gran mundo, con ese amor profundo, yo quiero amarte siempre, tú eres lo más grande, que Dios creo en la tierra nunca me dejes solo."));
+        lista.add(new Himno(21, "SI ESTAS CUMPLIENDO",
+                "I" + "\n" +
+                        "Si estas cumpliendo un año más de vida, te deseamos que Dios te bendiga (Bis). Que permanezcas muy firme y muy fiel, que no desmayes y tengas valor y que permitas que siempre con él, este tu alma y tu corazón" +
+                        "\n" + "II" + "\n" +
+                        "Si estas cumpliendo un año más de vida, te deseamos que Dios te bendiga, que no te falte su gracia y su guía y que adelante con Cristo tu sigas." +
+                        "\n" + "III" + "\n" +
+                        "Le pido a Dios que te deje vivir, en este mundo muchos años más, y que la pases siempre muy feliz, que no te falte la dicha y las paz."));
         lista.add(new Himno(22, "UN DIA DE BODAS",
                 "I" + "\n" +
-                        "Un día de bodas, el vino falto imposible poderlo comprar, que bello milagro, hiciste señor con el agua de aquel manantial, colmaste hasta el borde del vino mejor, las tinajas que pude llenar. Yo puse mi esfuerzo, yo puse mi afán tú pusiste señor lo demás." +
+                        "Un día de bodas el vino falto, imposible poderlo comprar, que bello milagro, hiciste señor con el agua de aquel manantial, colmaste hasta el borde del vino mejor, las tinajas que pude llenar. Yo puse mi esfuerzo, yo puse mi afán tú pusiste señor lo demás." +
                         "\n" + "Coro" + "\n" +
-                        "La gente con hambre sentada espero, en el prado que baja hasta el mar, con cuanto tenia a tí se acercó un muchacho que quiso ayudar; su mano en su frente, feliz descanso en sus ojos su dulce mirar. El puso sus peces él puso su pan tú pusiste señor lo demás." +
+                        "Es muy poco señor lo que vengo atraer, es muy poco lo que puedo dar, en tus manos divinas yo vengo a traer y tu pones Jusús lo demas."+
                         "\n" + "II" + "\n" +
-                        "Los hombres volvieron al amanecer, muy cansados de tanto pescar las barcas vacías, que triste es volver y de nuevo tener que empezar, volvieron al agua a pescar otra vez su palabra les iba a animar, los hombre pusieron la barca y la red tu pusiste señor lo demás." +
-                        "\n" + "III" + "\n" +
-                        "Es muy poco señor lo que vengo atraer, es muy poco lo que puedo dar, mi trabajo es el agua que quiero ofrecer y mi esfuerzo un pedazo de pan."));
+                        "La gente con hambre sentada espero, en el prado que baja hasta el mar, con cuanto tenia a tí se acercó un muchacho que quiso ayudar; su mano en su frente, feliz descanso en sus ojos su dulce mirar. El puso sus peces, él puso su pan, tú pusiste señor lo demás." +
+                        "\n" + "III" + "\n"+
+                        "Los hombres volvieron al amanecer, muy cansados de tanto pescar las barcas vacías, que triste es volver y de nuevo tener que empezar, volvieron al agua a pescar otra vez su palabra les iba a animar, los hombre pusieron la barca y la red tu pusiste señor lo demás."));
         lista.add(new Himno(23, "UN DIA COMPRASTES MI ALMA",
                 "I" + "\n" +
                         "Un día compraste mi alma por eso soy tuyo señor, quitaste el dolor y tristeza, me diste la paz y el perdón." +

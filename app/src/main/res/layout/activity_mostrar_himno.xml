@@ -18,7 +18,8 @@
             android:background="@color/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorAccent">
+            app:titleTextColor="@color/colorAccent"
+            app:subtitleTextColor="@color/textPrincipal">
 
         </androidx.appcompat.widget.Toolbar>
 

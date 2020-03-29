@@ -7,6 +7,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="android:fontFamily">@font/petit_formal_script</item>
+        <item name="android:itemTextAppearance">@style/CustomtextColor</item>
+        <!--<item name="android:actionButtonStyle">@style/CustomOverflowButton</item>-->
     </style>
     <!-- Base application theme. -->
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -16,7 +18,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:itemTextAppearance">@style/CustomtextColor</item>
         <item name="android:fontFamily">@font/petit_formal_script</item>
+        <!--<item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>-->
+        <item name="colorControlNormal">@color/colorAccent</item>
     </style>
 
     <style name="SplashTheme" parent="AppTheme.NoActionBar">
@@ -30,5 +35,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light">
 
+    </style>
+    <style name="CustomtextColor" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="CustomOverflowButton" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:itemTextAppearance">@color/colorAccent</item>
     </style>
 </resources>

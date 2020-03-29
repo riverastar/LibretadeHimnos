@@ -48,31 +48,32 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         play = (Button) findViewById(R.id.play1);
         play.setBackgroundResource(R.drawable.play);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         //llenar vector
         mp[0] = MediaPlayer.create(this, R.raw.angelesblancos);
-        mp[1] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[2] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[1] = MediaPlayer.create(this, R.raw.allaenelcielo);
+        mp[2] = MediaPlayer.create(this, R.raw.consejodivino);
         mp[3] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[4] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[4] = MediaPlayer.create(this, R.raw.cuantodolor);
         mp[5] = MediaPlayer.create(this, R.raw.loquendo);
         mp[6] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[7] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[7] = MediaPlayer.create(this, R.raw.divinocompanero);
         mp[8] = MediaPlayer.create(this, R.raw.loquendo);
         mp[9] = MediaPlayer.create(this, R.raw.loquendo);
         mp[10] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[11] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[12] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[11] = MediaPlayer.create(this, R.raw.juventud);
+        mp[12] = MediaPlayer.create(this, R.raw.luzdelamanana);
         mp[13] = MediaPlayer.create(this, R.raw.loquendo);
         mp[14] = MediaPlayer.create(this, R.raw.loquendo);
         mp[15] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[16] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[16] = MediaPlayer.create(this, R.raw.muyprontovendra);
         mp[17] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[18] = MediaPlayer.create(this, R.raw.muyprontovendra);
+        mp[18] = MediaPlayer.create(this, R.raw.loquendo);
         mp[19] = MediaPlayer.create(this, R.raw.loquendo);
         mp[20] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[21] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[21] = MediaPlayer.create(this, R.raw.undiadebodas);
         mp[22] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[23] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[23] = MediaPlayer.create(this, R.raw.yosoloespero);
         mp[24] = MediaPlayer.create(this, R.raw.loquendo);
         mp[25] = MediaPlayer.create(this, R.raw.loquendo);
 
@@ -88,10 +89,10 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
 
-        if (sel == 3) {
+        if (sel == 18) {
             getSupportActionBar().setSubtitle("Cumpleaños");
         }
-        if (sel == 4) {
+        if (sel == 20) {
             getSupportActionBar().setSubtitle("Cumpleaños");
         }
 
@@ -191,7 +192,6 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     }
 
     private void tocarHimnos() {
-
         if (mp[sel] != null && mp[sel].isPlaying()) {
             mp[sel].pause();
             play.setBackgroundResource(R.drawable.pausa);
@@ -273,7 +273,6 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
 
     //codigo detener musica al pulsar regresar
     public void onBackPressed() {
-        Toast.makeText(getApplication(), "hola" + sel, Toast.LENGTH_LONG).show();
         if (mp[sel] != null && mp[sel].isPlaying()) {
             mp[sel].stop();
         }
@@ -283,7 +282,6 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
     //codigo para manipular la flecha atras
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if (item.getItemId() == android.R.id.home) {
             mp[sel].stop();
             finish();

@@ -7,5 +7,10 @@
     <string name="nombrehimno"></string>
     <string name="tituloHimno"></string>
     <string name="listaHimnos"></string>
+    <string name="app_bar_switch"></string>
+    <string name="pprivacidad">Politicas de privacidad</string>
+    <string name="item2">Acerca de...</string>
+    <string name="item3">Opciones</string>
+    <string name="subitem1">Otros</string>
 
 </resources>
