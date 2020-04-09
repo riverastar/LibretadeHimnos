@@ -76,19 +76,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/buttom_drawable_background"
-                    android:fontFamily="Arial"
                     android:onClick="onClinck"
                     android:text="@string/iraLista"
                     android:textColor="@color/colorAccent"
                     android:textSize="18dp"
-                    android:textStyle="italic" />
-
+                    android:layout_margin="10dp"
+                    android:textStyle="italic"
+                    android:fontFamily="Arial"/>
+                <Button
+                    android:id="@+id/reproductor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reproductor"
+                    android:background="@drawable/buttom_drawable_background"
+                    android:onClick="reproductor"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18dp"
+                    android:layout_margin="10dp"
+                    android:textStyle="italic"
+                    android:fontFamily="Arial"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/mode" />
             </LinearLayout>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

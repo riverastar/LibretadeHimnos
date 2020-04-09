@@ -110,14 +110,16 @@ public class MainActivity extends AppCompatActivity {
         Intent miIntent = new Intent(MainActivity.this, Lista.class);
         startActivity(miIntent);
     }
+    public void reproductor(View view) {
+        Intent miIntent = new Intent(MainActivity.this, Reproductor.class);
+        startActivity(miIntent);
+    }
     public void automatico(){
-
         Calendar calendario = Calendar.getInstance();
         int hora = calendario.get(Calendar.HOUR_OF_DAY);
         for (int contador=0; contador<=11; contador++){
             if (hora == noche[contador]){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
             }
         }
     }
