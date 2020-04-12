@@ -7,22 +7,20 @@
         app:actionLayout="@layout/switch_item"
         app:showAsAction="always" />
     <item
+        android:id="@+id/grupo"
+        android:title="@string/grupo"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/youtobe"
+        android:title="@string/youtobe"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/pprivacidad"
         android:title="@string/pprivacidad"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item2"
-        android:title="@string/item2"
+        android:id="@+id/acerca"
+        android:title="@string/acerca"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/item3"
-        android:title="@string/item3"
-        app:showAsAction="never">
-        <menu>
-            <item
-                android:id="@+id/subitem1"
-                android:title=""
-                app:showAsAction="never" />
-        </menu>
-    </item>
+
 </menu>

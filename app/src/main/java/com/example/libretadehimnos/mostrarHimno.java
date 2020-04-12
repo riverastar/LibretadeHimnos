@@ -59,43 +59,43 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
 
         //llenar vector
         mp[0] = MediaPlayer.create(this, R.raw.angelesblancos);
-        mp[1] = MediaPlayer.create(this, R.raw.allaenelcielo);
-        mp[2] = MediaPlayer.create(this, R.raw.consejodivino);
+        mp[1] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[2] = MediaPlayer.create(this, R.raw.allaenelcielo);
         mp[3] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[4] = MediaPlayer.create(this, R.raw.cuantodolor);
+        mp[4] = MediaPlayer.create(this, R.raw.loquendo);
         mp[5] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[6] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[7] = MediaPlayer.create(this, R.raw.divinocompanero);
-        mp[8] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[6] = MediaPlayer.create(this, R.raw.consejodivino);
+        mp[7] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[8] = MediaPlayer.create(this, R.raw.cuantodolor);
         mp[9] = MediaPlayer.create(this, R.raw.loquendo);
         mp[10] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[11] = MediaPlayer.create(this, R.raw.juventud);
+        mp[11] = MediaPlayer.create(this, R.raw.divinocompanero);
         mp[12] = MediaPlayer.create(this, R.raw.luzdelamanana);
         mp[13] = MediaPlayer.create(this, R.raw.loquendo);
         mp[14] = MediaPlayer.create(this, R.raw.loquendo);
         mp[15] = MediaPlayer.create(this, R.raw.loquendo);
         mp[16] = MediaPlayer.create(this, R.raw.muyprontovendra);
         mp[17] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[18] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[19] = MediaPlayer.create(this, R.raw.regresa);
-        mp[20] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[18] = MediaPlayer.create(this, R.raw.juventud);
+        mp[19] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[20] = MediaPlayer.create(this, R.raw.luzdelamanana);
         mp[21] = MediaPlayer.create(this, R.raw.loquendo);
         mp[22] = MediaPlayer.create(this, R.raw.undiadebodas);
         mp[23] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[24] = MediaPlayer.create(this, R.raw.yosoloespero);
-        mp[25] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[24] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[25] = MediaPlayer.create(this, R.raw.muyprontovendra);
         mp[26] = MediaPlayer.create(this, R.raw.loquendo);
         mp[27] = MediaPlayer.create(this, R.raw.loquendo);
         mp[28] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[29] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[29] = MediaPlayer.create(this, R.raw.regresa);
         mp[30] = MediaPlayer.create(this, R.raw.loquendo);
         mp[31] = MediaPlayer.create(this, R.raw.loquendo);
         mp[32] = MediaPlayer.create(this, R.raw.loquendo);
         mp[33] = MediaPlayer.create(this, R.raw.loquendo);
         mp[34] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[35] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[35] = MediaPlayer.create(this, R.raw.undiadebodas);
         mp[36] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[37] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[37] = MediaPlayer.create(this, R.raw.yosoloespero);
         mp[38] = MediaPlayer.create(this, R.raw.loquendo);
         mp[39] = MediaPlayer.create(this, R.raw.loquendo);
         mp[40] = MediaPlayer.create(this, R.raw.loquendo);
@@ -113,10 +113,10 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
         String titulo = getIntent().getStringExtra("titulo");
         String letra = getIntent().getStringExtra("letra");
 
-        if (sel == 18) {
+        if (sel == 28) {
             getSupportActionBar().setSubtitle("Cumpleaños");
         }
-        if (sel == 20) {
+        if (sel == 31) {
             getSupportActionBar().setSubtitle("Cumpleaños");
         }
 
@@ -151,11 +151,9 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
                         tocarHimnos();
                         break;
                     case 3:
-
                         tocarHimnos();
                         break;
                     case 4:
-
                         tocarHimnos();
                         break;
                     case 5:
@@ -269,7 +267,6 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
                         tocarHimnos();
                         break;
                 }
-
             }
         });
     }
@@ -279,7 +276,6 @@ public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
             mp[sel].pause();
             play.setBackgroundResource(R.drawable.pausa);
         } else {
-            Toast.makeText(getApplication(), "" + sel, Toast.LENGTH_LONG).show();
             mp[sel].start();
             play.setBackgroundResource(R.drawable.corriendo);
             changeSeekbar();

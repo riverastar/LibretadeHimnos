@@ -18,29 +18,24 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Lista extends AppCompatActivity {
     private ListView lvHimnos;
     private ArrayAdapter<Himno> adapter;
     private ArrayList<Himno> lista;
-    private Handler handler;
-    private SeekBar pista;
-    private Runnable runnable;
-    private Button play;
-    int selecion = 0, selMotor = 0;
+    int selecion = 0, sel = 0,selMotor = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Codigo para habilitar la flecha atras
-
         setContentView(R.layout.activity_lista);
 
         lvHimnos = (ListView) findViewById(R.id.listaHimnos);
-        //pista = (SeekBar) findViewById(R.id.seekBar);
-        play = (Button) findViewById(R.id.playMotor);
 
         lista = new ArrayList<Himno>();
         //lista de hinmos
@@ -411,6 +406,7 @@ public class Lista extends AppCompatActivity {
 
         adapter = new ArrayAdapter<Himno>(this, R.layout.list_item_libretadehimnos, lista);
         lvHimnos.setAdapter(adapter);
+        //para motrarhimnos
         lvHimnos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -458,11 +454,9 @@ public class Lista extends AppCompatActivity {
                             intent.putExtra("mId", selMotor);
                             intent.putExtra("mTitulo", titulo);
                             intent.putExtra("mLetra", letra);
-
                             startActivity(intent);
-
                         }
-                        if (lupa1.equals("ALLA EN EL CIELO")) {
+                        if (lupa1.equals("ANOCHE YO SOÑABA")) {
                             selMotor = lista.get(1).getId();
                             String titulo = lista.get(1).getHimno();
                             String letra = lista.get(1).getLetra();
@@ -470,11 +464,9 @@ public class Lista extends AppCompatActivity {
                             intent.putExtra("mId", selMotor);
                             intent.putExtra("mTitulo", titulo);
                             intent.putExtra("mLetra", letra);
-
                             startActivity(intent);
-
                         }
-                        if (lupa1.equals("CONSEJO DIVINO")) {
+                        if (lupa1.equals("ALLA EN EL CIELO")) {
                             selMotor = lista.get(2).getId();
                             String titulo = lista.get(2).getHimno();
                             String letra = lista.get(2).getLetra();
@@ -482,11 +474,9 @@ public class Lista extends AppCompatActivity {
                             intent.putExtra("mId", selMotor);
                             intent.putExtra("mTitulo", titulo);
                             intent.putExtra("mLetra", letra);
-
                             startActivity(intent);
-
                         }
-                        if (lupa1.equals("SI ESTAS CUMPLIENDO")) {
+                        if (lupa1.equals("A SOLAS CON JESUS")) {
                             selMotor = lista.get(3).getId();
                             String titulo = lista.get(3).getHimno();
                             String letra = lista.get(3).getLetra();
@@ -498,7 +488,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa1.equals("QUE EL SEÑOR TE CONCEDA")) {
+                        if (lupa1.equals("A VECES LAGRIMAS")) {
                             selMotor = lista.get(4).getId();
                             String titulo = lista.get(4).getHimno();
                             String letra = lista.get(4).getLetra();
@@ -510,7 +500,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa1.equals("CRISTO HALLOME")) {
+                        if (lupa1.equals("BENDITO EL DIA")) {
                             selMotor = lista.get(5).getId();
                             String titulo = lista.get(5).getHimno();
                             String letra = lista.get(5).getLetra();
@@ -521,7 +511,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa1.equals("CUANTO DOLOR")) {
+                        if (lupa1.equals("CONSEJO DIVINO")) {
                             selMotor = lista.get(6).getId();
                             String titulo = lista.get(6).getHimno();
                             String letra = lista.get(6).getLetra();
@@ -532,7 +522,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa1.equals("DIA TAN GRANDE")) {
+                        if (lupa1.equals("CRISTO HALLOME")) {
                             selMotor = lista.get(7).getId();
                             String titulo = lista.get(7).getHimno();
                             String letra = lista.get(7).getLetra();
@@ -543,7 +533,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa1.equals("DAME LA VICTORIA")) {
+                        if (lupa1.equals("CUANTO DOLOR")) {
                             selMotor = lista.get(8).getId();
                             String titulo = lista.get(8).getHimno();
                             String letra = lista.get(8).getLetra();
@@ -554,7 +544,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa1.equals("DIVINO COMPAÑERO")) {
+                        if (lupa1.equals("DIA TAN GRANDE")) {
                             selMotor = lista.get(9).getId();
                             String titulo = lista.get(9).getHimno();
                             String letra = lista.get(9).getLetra();
@@ -565,7 +555,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("EN EL SANTUARIO CELESTIAL")) {
+                        if (lupa2.equals("DAME LA VICTORIA")) {
                             selMotor = lista.get(10).getId();
                             String titulo = lista.get(10).getHimno();
                             String letra = lista.get(10).getLetra();
@@ -576,7 +566,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("ESPINAS QUE DAN ROSAS")) {
+                        if (lupa2.equals("DIVINO COMPAÑERO")) {
                             selMotor = lista.get(11).getId();
                             String titulo = lista.get(11).getHimno();
                             String letra = lista.get(11).getLetra();
@@ -587,7 +577,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("FIRME ESTARE")) {
+                        if (lupa2.equals("DESPIERTA HERMANO")) {
                             selMotor = lista.get(12).getId();
                             String titulo = lista.get(12).getHimno();
                             String letra = lista.get(12).getLetra();
@@ -598,7 +588,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("JUVENTUD")) {
+                        if (lupa2.equals("EN EL SANTUARIO CELESTIAL")) {
                             selMotor = lista.get(13).getId();
                             String titulo = lista.get(13).getHimno();
                             String letra = lista.get(13).getLetra();
@@ -609,7 +599,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("LUZ DE LA MAÑANA")) {
+                        if (lupa2.equals("EL DIVINO CARPINTERO")) {
                             selMotor = lista.get(14).getId();
                             String titulo = lista.get(14).getHimno();
                             String letra = lista.get(14).getLetra();
@@ -620,7 +610,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("LA MAÑANA GLORIOSA")) {
+                        if (lupa2.equals("ELEVO MI CANTAR")) {
                             selMotor = lista.get(15).getId();
                             String titulo = lista.get(15).getHimno();
                             String letra = lista.get(15).getLetra();
@@ -631,7 +621,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("LLEVAME SEÑOR")) {
+                        if (lupa2.equals("ESPINAS QUE DAN ROSAS")) {
                             selMotor = lista.get(16).getId();
                             String titulo = lista.get(16).getHimno();
                             String letra = lista.get(16).getLetra();
@@ -642,7 +632,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("MASION GLORIOSA")) {
+                        if (lupa2.equals("FIRME ESTARE")) {
                             selMotor = lista.get(17).getId();
                             String titulo = lista.get(17).getHimno();
                             String letra = lista.get(17).getLetra();
@@ -653,7 +643,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("MUY PRONTO VENDRA")) {
+                        if (lupa2.equals("JUVENTUD")) {
                             selMotor = lista.get(18).getId();
                             String titulo = lista.get(18).getHimno();
                             String letra = lista.get(18).getLetra();
@@ -665,7 +655,7 @@ public class Lista extends AppCompatActivity {
                             //codigo para el boton pausa y play
 
                         }
-                        if (lupa2.equals("POR LA MAÑANA")) {
+                        if (lupa2.equals("JESUS ES EL NOMBRE")) {
                             selMotor = lista.get(19).getId();
                             String titulo = lista.get(19).getHimno();
                             String letra = lista.get(19).getLetra();
@@ -676,7 +666,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("SIN MADRE")) {
+                        if (lupa2.equals("LUZ DE LA MAÑANA")) {
                             selMotor = lista.get(20).getId();
                             String titulo = lista.get(20).getHimno();
                             String letra = lista.get(20).getLetra();
@@ -687,7 +677,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("UN DIA DE BODAS")) {
+                        if (lupa2.equals("LA MAÑANA GLORIOSA")) {
                             selMotor = lista.get(21).getId();
                             String titulo = lista.get(21).getHimno();
                             String letra = lista.get(21).getLetra();
@@ -698,7 +688,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("UN DIA COMPRASTES MI ALMA")) {
+                        if (lupa2.equals("LLEVAME SEÑOR")) {
                             selMotor = lista.get(22).getId();
                             String titulo = lista.get(22).getHimno();
                             String letra = lista.get(22).getLetra();
@@ -709,7 +699,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("YO SOLO ESPERO ESE DIA")) {
+                        if (lupa2.equals("LLEGO JESUS")) {
                             selMotor = lista.get(23).getId();
                             String titulo = lista.get(23).getHimno();
                             String letra = lista.get(23).getLetra();
@@ -720,7 +710,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("YO QUIERO SER COMO FUE JESUS")) {
+                        if (lupa2.equals("MANSION GLORIOSA")) {
                             selMotor = lista.get(24).getId();
                             String titulo = lista.get(24).getHimno();
                             String letra = lista.get(24).getLetra();
@@ -731,7 +721,7 @@ public class Lista extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        if (lupa2.equals("YO SE A QUIEN HE CREIDO")) {
+                        if (lupa2.equals("MUY PRONTO VENDRA")) {
                             selMotor = lista.get(25).getId();
                             String titulo = lista.get(25).getHimno();
                             String letra = lista.get(25).getLetra();
@@ -741,6 +731,159 @@ public class Lista extends AppCompatActivity {
                             intent.putExtra("mLetra", letra);
                             startActivity(intent);
 
+                        }
+                        if (lupa2.equals("NAVIDAD Y AÑO NUEVO")) {
+                            selMotor = lista.get(26).getId();
+                            String titulo = lista.get(26).getHimno();
+                            String letra = lista.get(26).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("POR LA MAÑANA")) {
+                            selMotor = lista.get(27).getId();
+                            String titulo = lista.get(27).getHimno();
+                            String letra = lista.get(27).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("QUE EL SEÑOR TE CONCEDA")) {
+                            selMotor = lista.get(28).getId();
+                            String titulo = lista.get(28).getHimno();
+                            String letra = lista.get(28).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("REGRESA")) {
+                            selMotor = lista.get(29).getId();
+                            String titulo = lista.get(29).getHimno();
+                            String letra = lista.get(29).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("SIN MADRE")) {
+                            selMotor = lista.get(30).getId();
+                            String titulo = lista.get(30).getHimno();
+                            String letra = lista.get(30).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("SI ESTAS CUMPLIENDO")) {
+                            selMotor = lista.get(31).getId();
+                            String titulo = lista.get(31).getHimno();
+                            String letra = lista.get(31).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("SI EN ESTA VIDA ANDAS")) {
+                            selMotor = lista.get(32).getId();
+                            String titulo = lista.get(32).getHimno();
+                            String letra = lista.get(32).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("TIERRA DE PALESTINA")) {
+                            selMotor = lista.get(33).getId();
+                            String titulo = lista.get(33).getHimno();
+                            String letra = lista.get(33).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("TODO LO PAGO EL SEÑOR")) {
+                            selMotor = lista.get(34).getId();
+                            String titulo = lista.get(34).getHimno();
+                            String letra = lista.get(34).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("UN DIA DE BODAS")) {
+                            selMotor = lista.get(35).getId();
+                            String titulo = lista.get(35).getHimno();
+                            String letra = lista.get(35).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("UN DIA COMPRASTE MI ALMA")) {
+                            selMotor = lista.get(36).getId();
+                            String titulo = lista.get(36).getHimno();
+                            String letra = lista.get(36).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("YO SOLO ESPERO ESE DIA")) {
+                            selMotor = lista.get(37).getId();
+                            String titulo = lista.get(37).getHimno();
+                            String letra = lista.get(37).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("YO QUIERO SER COMO FUE JESUS")) {
+                            selMotor = lista.get(38).getId();
+                            String titulo = lista.get(38).getHimno();
+                            String letra = lista.get(38).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
+
+                        }
+                        if (lupa2.equals("YO SE A QUIEN HE CREIDO")) {
+                            selMotor = lista.get(39).getId();
+                            String titulo = lista.get(39).getHimno();
+                            String letra = lista.get(39).getLetra();
+                            Intent intent = new Intent(getApplicationContext(), motordeBusqueda.class);
+                            intent.putExtra("mId", selMotor);
+                            intent.putExtra("mTitulo", titulo);
+                            intent.putExtra("mLetra", letra);
+                            startActivity(intent);
                         }
                     }
                 });

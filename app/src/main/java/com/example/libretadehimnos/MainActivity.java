@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.URL;
@@ -19,7 +22,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private String url;
+    private String url,urly;
     private int noche[] = new int[12];
 
     @Override
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         url = "https://osvaldor300.wixsite.com/libretadehimnos";
+        urly = "https://www.youtube.com/channel/UCNBmonWJVjGG2H0zhZCydRA/featured?view_as=subscriber";
         //llamado del toolbar generico dos formas
         //toolbar.inflateMenu(R.menu.overflow);
         setSupportActionBar(toolbar);
@@ -88,21 +92,34 @@ public class MainActivity extends AppCompatActivity {
     //Metodo para asignar las funciones correspondientes a las opciones del menu
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+        if (id == R.id.grupo) {
+            Toast.makeText(this, "opcions1", Toast.LENGTH_SHORT).show();
+        }
+        if (id == R.id.youtobe) {
+            Uri uri = Uri.parse(urly);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        }
         if (id == R.id.pprivacidad) {
-            Toast.makeText(this, "opcion1", Toast.LENGTH_SHORT).show();
             Uri uri = Uri.parse(url);
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         }
-        if (id == R.id.item2) {
-            Toast.makeText(this, "opcionsi1", Toast.LENGTH_SHORT).show();
+        if (id == R.id.acerca) {
+            final Dialog dialogo = new Dialog(MainActivity.this);
+            dialogo.setCancelable(true);
+            dialogo.setContentView(R.layout.acercade);
+            dialogo.show();
+            TextView cancelar = (TextView) dialogo.findViewById(R.id.cerrar);
+            cancelar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialogo.dismiss();
+                }
+            });
         }
-        if (id == R.id.item3) {
-            Toast.makeText(this, "opcionsi1", Toast.LENGTH_SHORT).show();
-        }
-        if (id == R.id.subitem1) {
-            Toast.makeText(this, "opcionsi1", Toast.LENGTH_SHORT).show();
-        }
+
         return true;
     }
 

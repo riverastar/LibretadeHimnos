@@ -18,6 +18,18 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:textSize="35dp"/>
+    <Button
+        android:id="@+id/todo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/todo"
+        android:onClick="play"
+        android:background="@drawable/buttom_drawable_background"
+        android:textColor="@color/colorAccent"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:fontFamily="Arial"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

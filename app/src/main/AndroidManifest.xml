@@ -9,27 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Reproductor"></activity>
+        <activity android:name=".Reproductor"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".motordeBusqueda"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".splash"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".motordeBusqueda" />
-        <activity android:name=".mostrarHimno" />
+        <activity android:name=".mostrarHimno"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Lista"
             android:label="Lista de Himnos"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
-
+            android:theme="@style/AppTheme"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

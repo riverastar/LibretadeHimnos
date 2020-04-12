@@ -2,6 +2,8 @@
     <string name="app_name">Libreta de Himnos</string>
     <string name="buscar">Nombre del Himno</string>
     <string name="iraLista">Lista de Himnos</string>
+    <string name="todo">AUTO PLAY</string>
+    <string name="dialogo">Libreta De Himnos</string>
     <string name="reproductor">Reproductor</string>
     <string name="titulo1">HIMNOS ESPECIALES JOJANCITO</string>
     <string name="versiculo">Aclamad con júbilo al SEÑOR, toda la tierra; prorrumpid y cantad con gozo, cantad alabanzas. SALMOS 98:4.</string>
@@ -9,9 +11,9 @@
     <string name="tituloHimno"></string>
     <string name="listaHimnos"></string>
     <string name="app_bar_switch"></string>
+    <string name="grupo">Musica</string>
+    <string name="youtobe">Canal YouTobe</string>
     <string name="pprivacidad">Politicas de privacidad</string>
-    <string name="item2">Acerca de...</string>
-    <string name="item3">Opciones</string>
-    <string name="subitem1">Otros</string>
-
+    <string name="acerca">Acerca de...</string>
+    <string name="acercade">Desarrollado por:\nOswaldo Rivera Canoles Desarrollador:Android Java\nEmail: osvaldor30@hotmail.com</string>
 </resources>

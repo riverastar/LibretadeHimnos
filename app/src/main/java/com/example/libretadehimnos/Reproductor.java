@@ -2,22 +2,24 @@ package com.example.libretadehimnos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Reproductor extends AppCompatActivity {
     private TextView tex1, tex2, tex3;
     private Button b1, b2, b3, b4, b5;
     private SeekBar sB;
-    private MediaPlayer mp;
     private MediaPlayer vectormp[] = new MediaPlayer[10];
     private Handler myHandler = new Handler();
     private double starTime = 0;
@@ -25,6 +27,11 @@ public class Reproductor extends AppCompatActivity {
     String him[] = {"ANGELES BLANCOS", "ALLA EN EL CIELO", "CONSEJO DIVINO", "CUANTO DOLOR", "DIVINO COMPAÑERO", "LUZ DE LA MAÑANA", "MUY PRONTO VENDRA", "REGRESA", "JUVENTUD", "YO SOLO ESPERO"};
     int repetir = 0, posicion = 0;
     public static int oneTimeOnly = 0;
+
+    private final static String TAG = "MediaPlayer audios";
+    private MediaPlayer mediaPlayer;
+    private int[] sounds = {R.raw.angelesblancos, R.raw.allaenelcielo, R.raw.consejodivino,R.raw.cuantodolor,R.raw.luzdelamanana,R.raw.muyprontovendra,R.raw.regresa,R.raw.juventud,R.raw.yosoloespero};
+    private int sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +62,7 @@ public class Reproductor extends AppCompatActivity {
         b3.setBackgroundResource(R.drawable.norepetir);
         b4.setBackgroundResource(R.drawable.ante);
         b5.setBackgroundResource(R.drawable.sig);
+        mediaPlayer  = mediaPlayer.create(this, sounds[0]);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +74,7 @@ public class Reproductor extends AppCompatActivity {
                 } else {
                     b1.setBackgroundResource(R.drawable.pausa);
                     Toast.makeText(getApplication(), "PLAY", Toast.LENGTH_SHORT).show();
-                            vectormp[posicion].start();
-
+                    vectormp[posicion].start();
                 }
             }
         });
@@ -87,8 +94,8 @@ public class Reproductor extends AppCompatActivity {
                     vectormp[8] = MediaPlayer.create(getApplication(), R.raw.juventud);
                     vectormp[9] = MediaPlayer.create(getApplication(), R.raw.yosoloespero);
                     posicion = 0;
-
                     Toast.makeText(getApplication(), "STOP", Toast.LENGTH_SHORT).show();
+                    b1.setBackgroundResource(R.drawable.playr);
                 }
             }
         });
@@ -111,7 +118,7 @@ public class Reproductor extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (posicion >=1) {
+                if (posicion >= 1) {
                     if (vectormp[posicion].isPlaying()) {
                         vectormp[posicion].stop();
                         vectormp[0] = MediaPlayer.create(getApplication(), R.raw.angelesblancos);
@@ -153,11 +160,39 @@ public class Reproductor extends AppCompatActivity {
             }
         });
     }
+
+    public void play(View view){
+        sound++;
+        Toast.makeText(getApplication(),"Se reproducira todos los himnos", Toast.LENGTH_LONG).show();
+        if (sounds.length <= sound){
+            //Termina reproducción de todos los audios.
+            return;
+        }
+        AssetFileDescriptor afd = this.getResources().openRawResourceFd(sounds[sound]);
+
+        try {
+            mediaPlayer.reset();
+            mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getDeclaredLength());
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+            afd.close();
+        }
+        catch (IllegalArgumentException e) {
+            Log.e(TAG, "IllegalArgumentException Unable to play audio : " + e.getMessage());
+        }
+        catch (IllegalStateException e) {
+            Log.e(TAG, "IllegalStateException Unable to play audio : " + e.getMessage());
+        }
+        catch (IOException e) {
+            Log.e(TAG, "IOException Unable to play audio : " + e.getMessage());
+        }
+    }
     //codigo detener musica al pulsar regresar
     public void onBackPressed() {
-        posicion++;
-        if (vectormp[posicion] != null && vectormp[posicion].isPlaying()) {
-            vectormp[posicion].stop();
+        for (posicion = 0; posicion < 10; posicion++) {
+            if (vectormp[posicion] != null && vectormp[posicion].isPlaying()) {
+                vectormp[posicion].stop();
+            }
         }
         super.onBackPressed();
     }
