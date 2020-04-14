@@ -1,9 +1,12 @@
-package com.example.libretadehimnos;
+package app.ejemplo.libretadehimnos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,93 +15,130 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.libretadehimnos.R;
 
 import java.util.concurrent.TimeUnit;
 
-
-public class motordeBusqueda extends AppCompatActivity {
-    private TextView etMotor, totalTime, currentTime;
-    private Button mplay;
+public class mostrarHimno<HandleInputStart> extends AppCompatActivity {
+    public View view;
     private Toolbar toolbar;
+    private TextView etLetra, totalTime, currentTime, nombre;
     private double starTime = 0;
     private double finalTime = 0;
-    private MediaPlayer mp[] = new MediaPlayer[42];
+    private MediaPlayer mp[] = new MediaPlayer[41];
+    private Button play;
     private Handler handler = new Handler();
     private SeekBar seekBar;
     private Runnable runnable;
     private int sel = 0;
     public static int oneTimeOnly = 0;
-
+    private ObjectAnimator animatorX;
+    private ObjectAnimator animatorY;
+    private long animatorDuration = 1000;
+    private AnimatorSet animatorSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_motorde_busqueda);
-
-        etMotor = (TextView) findViewById(R.id.motorMostrar);
-        totalTime = (TextView) findViewById(R.id.mtotalTimpo);
-        currentTime = (TextView) findViewById(R.id.mcurrentTiempo);
-        mplay = (Button) findViewById(R.id.playMotor);
-        seekBar = (SeekBar) findViewById(R.id.seekBarr);
-        toolbar = (Toolbar) findViewById(R.id.mtoolbar);
-        setSupportActionBar(toolbar);
-        mplay.setBackgroundResource(R.drawable.play);
+        setContentView(R.layout.activity_mostrar_himno);
+        //Codigo para habilitar la flecha de atras
+        //casteo de variables
+        view = this.getWindow().getDecorView();
+        etLetra = (TextView) findViewById(R.id.etMostrar);
+        totalTime = (TextView) findViewById(R.id.totalTimer);
+        currentTime = (TextView) findViewById(R.id.currentTimer);
+        nombre = (TextView) findViewById(R.id.nombre);
+        play = (Button) findViewById(R.id.play1);
+        play.setBackgroundResource(R.drawable.play);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         //llenar vector
-        mp[1] = MediaPlayer.create(this, R.raw.angelesblancos);
-        mp[2] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[3] = MediaPlayer.create(this, R.raw.allaenelcielo);
+        mp[0] = MediaPlayer.create(this, R.raw.angelesblancos);
+        mp[1] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[2] = MediaPlayer.create(this, R.raw.allaenelcielo);
+        mp[3] = MediaPlayer.create(this, R.raw.loquendo);
         mp[4] = MediaPlayer.create(this, R.raw.loquendo);
         mp[5] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[6] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[7] = MediaPlayer.create(this, R.raw.consejodivino);
-        mp[8] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[9] = MediaPlayer.create(this, R.raw.cuantodolor);
+        mp[6] = MediaPlayer.create(this, R.raw.consejodivino);
+        mp[7] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[8] = MediaPlayer.create(this, R.raw.cuantodolor);
+        mp[9] = MediaPlayer.create(this, R.raw.loquendo);
         mp[10] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[11] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[12] = MediaPlayer.create(this, R.raw.divinocompanero);
-        mp[13] = MediaPlayer.create(this, R.raw.luzdelamanana);
+        mp[11] = MediaPlayer.create(this, R.raw.divinocompanero);
+        mp[12] = MediaPlayer.create(this, R.raw.luzdelamanana);
+        mp[13] = MediaPlayer.create(this, R.raw.loquendo);
         mp[14] = MediaPlayer.create(this, R.raw.loquendo);
         mp[15] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[16] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[17] = MediaPlayer.create(this, R.raw.muyprontovendra);
-        mp[18] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[19] = MediaPlayer.create(this, R.raw.juventud);
-        mp[20] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[21] = MediaPlayer.create(this, R.raw.luzdelamanana);
-        mp[22] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[23] = MediaPlayer.create(this, R.raw.undiadebodas);
+        mp[16] = MediaPlayer.create(this, R.raw.muyprontovendra);
+        mp[17] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[18] = MediaPlayer.create(this, R.raw.juventud);
+        mp[19] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[20] = MediaPlayer.create(this, R.raw.luzdelamanana);
+        mp[21] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[22] = MediaPlayer.create(this, R.raw.undiadebodas);
+        mp[23] = MediaPlayer.create(this, R.raw.loquendo);
         mp[24] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[25] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[26] = MediaPlayer.create(this, R.raw.muyprontovendra);
+        mp[25] = MediaPlayer.create(this, R.raw.muyprontovendra);
+        mp[26] = MediaPlayer.create(this, R.raw.loquendo);
         mp[27] = MediaPlayer.create(this, R.raw.loquendo);
         mp[28] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[29] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[30] = MediaPlayer.create(this, R.raw.regresa);
+        mp[29] = MediaPlayer.create(this, R.raw.regresa);
+        mp[30] = MediaPlayer.create(this, R.raw.loquendo);
         mp[31] = MediaPlayer.create(this, R.raw.loquendo);
         mp[32] = MediaPlayer.create(this, R.raw.loquendo);
         mp[33] = MediaPlayer.create(this, R.raw.loquendo);
         mp[34] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[35] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[36] = MediaPlayer.create(this, R.raw.undiadebodas);
-        mp[37] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[38] = MediaPlayer.create(this, R.raw.yosoloespero);
+        mp[35] = MediaPlayer.create(this, R.raw.undiadebodas);
+        mp[36] = MediaPlayer.create(this, R.raw.loquendo);
+        mp[37] = MediaPlayer.create(this, R.raw.yosoloespero);
+        mp[38] = MediaPlayer.create(this, R.raw.loquendo);
         mp[39] = MediaPlayer.create(this, R.raw.loquendo);
         mp[40] = MediaPlayer.create(this, R.raw.loquendo);
-        mp[41] = MediaPlayer.create(this, R.raw.loquendo);
 
-        sel = getIntent().getIntExtra("mId", -1);
-        String mTitulo = getIntent().getStringExtra("mTitulo");
-        String mLetra = getIntent().getStringExtra("mLetra");
-        getSupportActionBar().setTitle(mTitulo);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+
+        setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        etMotor.setText(mLetra);
-        //control para el boton play en el motor de busqueda
-        mplay.setOnClickListener(new View.OnClickListener() {
+        //revisar esto
+
+
+        sel = getIntent().getIntExtra("selecion", -1);//forma para recibir un dato entero de otra actividad
+        String titulo = getIntent().getStringExtra("titulo");
+        String letra = getIntent().getStringExtra("letra");
+
+        if (sel == 28) {
+            getSupportActionBar().setSubtitle("Cumpleaños");
+        }
+        if (sel == 31) {
+            getSupportActionBar().setSubtitle("Cumpleaños");
+        }
+
+        etLetra.setText(letra);
+        getSupportActionBar().setTitle(titulo);
+
+
+        animatorX = ObjectAnimator.ofFloat(nombre,"x",500f);
+        animatorX.setDuration(animatorDuration);
+        AnimatorSet animatorSetBucle = new AnimatorSet();
+        animatorSetBucle.play(animatorX);
+        animatorSetBucle.addListener(new AnimatorListenerAdapter() {
+                                         @Override
+                                         public void onAnimationEnd(Animator animation) {
+                                             animation.start();
+                                         }
+                                    });
+                animatorSetBucle.start();
+        //codigo para el boton pausa y play
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (sel) {
+                    case 0:
+                        //Angeles blancos
+                        tocarHimnos();
+                        break;
                     case 1:
                         tocarHimnos();
                         break;
@@ -229,11 +269,10 @@ public class motordeBusqueda extends AppCompatActivity {
     private void tocarHimnos() {
         if (mp[sel] != null && mp[sel].isPlaying()) {
             mp[sel].pause();
-            mplay.setBackgroundResource(R.drawable.pausa);
+            play.setBackgroundResource(R.drawable.pausa);
         } else {
-            Toast.makeText(getApplication(), "" + sel, Toast.LENGTH_LONG).show();
             mp[sel].start();
-            mplay.setBackgroundResource(R.drawable.corriendo);
+            play.setBackgroundResource(R.drawable.corriendo);
             changeSeekbar();
             finalTime = mp[sel].getDuration();
             starTime = mp[sel].getCurrentPosition();
@@ -274,7 +313,6 @@ public class motordeBusqueda extends AppCompatActivity {
         seekBar.setProgress((int) starTime);
         handler.postDelayed(UpdateSongTime, 1000);
     }
-
     //codigo para correr seekbar
     private void changeSeekbar() {
         seekBar.setProgress(mp[sel].getCurrentPosition());
@@ -292,6 +330,7 @@ public class motordeBusqueda extends AppCompatActivity {
 
     //contador duracion del himno
     private Runnable UpdateSongTime = (new Runnable() {
+        @Override
         public void run() {
             starTime = mp[sel].getCurrentPosition();
             currentTime.setText(String.format("%d:%d",
@@ -305,11 +344,9 @@ public class motordeBusqueda extends AppCompatActivity {
     });
 
     //codigo detener musica al pulsar regresar
-    @Override
     public void onBackPressed() {
-        Toast.makeText(getApplication(), "hola" + sel, Toast.LENGTH_LONG).show();
         if (mp[sel] != null && mp[sel].isPlaying()) {
-            mp[sel].pause();
+            mp[sel].stop();
         }
         super.onBackPressed();
     }
@@ -318,9 +355,12 @@ public class motordeBusqueda extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            mp[sel].pause();
+            mp[sel].stop();
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void animacion(){
+
     }
 }

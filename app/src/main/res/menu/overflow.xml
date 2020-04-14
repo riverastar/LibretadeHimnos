@@ -6,10 +6,7 @@
         android:title="@string/app_bar_switch"
         app:actionLayout="@layout/switch_item"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/grupo"
-        android:title="@string/grupo"
-        app:showAsAction="never"/>
+
     <item
         android:id="@+id/youtobe"
         android:title="@string/youtobe"

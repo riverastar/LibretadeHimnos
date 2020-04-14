@@ -1,4 +1,4 @@
-package com.example.libretadehimnos;
+package app.ejemplo.libretadehimnos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -11,13 +11,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.net.URL;
+import com.example.libretadehimnos.R;
+
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -93,9 +92,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.grupo) {
-            Toast.makeText(this, "opcions1", Toast.LENGTH_SHORT).show();
-        }
         if (id == R.id.youtobe) {
             Uri uri = Uri.parse(urly);
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);

@@ -1,4 +1,4 @@
-package com.example.libretadehimnos;
+package app.ejemplo.libretadehimnos;
 
 public class Himno {
     private int id;

@@ -1,27 +1,20 @@
-package com.example.libretadehimnos;
+package app.ejemplo.libretadehimnos;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.SeekBar;
-import android.widget.TextView;
+
+import com.example.libretadehimnos.R;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class Lista extends AppCompatActivity {
     private ListView lvHimnos;

@@ -1,4 +1,4 @@
-package com.example.libretadehimnos;
+package app.ejemplo.libretadehimnos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,12 +13,13 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import com.example.libretadehimnos.R;
 
-public class Reproductor extends AppCompatActivity {
+import java.io.IOException;
+
+public class Reproductor extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
     private TextView tex1, tex2, tex3;
-    private Button b1, b2, b3, b4, b5;
+    private Button b1, b2, b3, b4, b5,tod;
     private SeekBar sB;
     private MediaPlayer vectormp[] = new MediaPlayer[10];
     private Handler myHandler = new Handler();
@@ -42,6 +43,7 @@ public class Reproductor extends AppCompatActivity {
         b3 = (Button) findViewById(R.id.boton3);
         b4 = (Button) findViewById(R.id.boton4);
         b5 = (Button) findViewById(R.id.boton5);
+        tod = (Button) findViewById(R.id.todo);
         tex1 = (TextView) findViewById(R.id.textView);
         tex2 = (TextView) findViewById(R.id.textView2);
         tex3 = (TextView) findViewById(R.id.textView3);
@@ -63,15 +65,21 @@ public class Reproductor extends AppCompatActivity {
         b4.setBackgroundResource(R.drawable.ante);
         b5.setBackgroundResource(R.drawable.sig);
         mediaPlayer  = mediaPlayer.create(this, sounds[0]);
+        mediaPlayer.setOnCompletionListener(this);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (vectormp[posicion].isPlaying()) {
                     vectormp[posicion].pause();
+                    mediaPlayer.stop();
                     b1.setBackgroundResource(R.drawable.playr);
                     Toast.makeText(getApplication(), "PAUSA", Toast.LENGTH_SHORT).show();
-                } else {
+                }else if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                    b1.setBackgroundResource(R.drawable.playr);
+                    Toast.makeText(getApplication(), "PAUSA2", Toast.LENGTH_SHORT).show();
+                                   }else {
                     b1.setBackgroundResource(R.drawable.pausa);
                     Toast.makeText(getApplication(), "PLAY", Toast.LENGTH_SHORT).show();
                     vectormp[posicion].start();
@@ -159,11 +167,29 @@ public class Reproductor extends AppCompatActivity {
                 }
             }
         });
+        tod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 if (mediaPlayer.isPlaying()|| vectormp[posicion].isPlaying()){
+                     mediaPlayer.stop();
+                     vectormp[posicion].pause();
+                     b1.setBackgroundResource(R.drawable.playr);
+                     Toast.makeText(getApplication(),"Ahora puedes presionar play",Toast.LENGTH_LONG).show();
+                 }else if (mediaPlayer.isPlaying() && vectormp[posicion].isPlaying()){
+                    mediaPlayer.stop();
+                    vectormp[posicion].pause();
+                    b1.setBackgroundResource(R.drawable.playr);
+                    Toast.makeText(getApplication(),"Ahora puedes presionar play2",Toast.LENGTH_LONG).show();
+                }else {
+                    mediaPlayer.start();
+                    Toast.makeText(getApplication(),"Se reproduciran todos los himnos",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
-    public void play(View view){
+    private void play(){
         sound++;
-        Toast.makeText(getApplication(),"Se reproducira todos los himnos", Toast.LENGTH_LONG).show();
         if (sounds.length <= sound){
             //Termina reproducción de todos los audios.
             return;
@@ -187,8 +213,13 @@ public class Reproductor extends AppCompatActivity {
             Log.e(TAG, "IOException Unable to play audio : " + e.getMessage());
         }
     }
+    @Override
+    public void onCompletion(MediaPlayer mp) {
+        play();
+    }
     //codigo detener musica al pulsar regresar
     public void onBackPressed() {
+        mediaPlayer.stop();
         for (posicion = 0; posicion < 10; posicion++) {
             if (vectormp[posicion] != null && vectormp[posicion].isPlaying()) {
                 vectormp[posicion].stop();

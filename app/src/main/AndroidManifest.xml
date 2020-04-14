@@ -9,27 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Reproductor"
+        <activity android:name="app.ejemplo.libretadehimnos.Reproductor"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".motordeBusqueda"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".MainActivity"
+        <activity android:name="app.ejemplo.libretadehimnos.motordeBusqueda"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".splash"
+            android:name="app.ejemplo.libretadehimnos.MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="app.ejemplo.libretadehimnos.splash"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mostrarHimno"
+        <activity android:name="app.ejemplo.libretadehimnos.mostrarHimno"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Lista"
+            android:name="app.ejemplo.libretadehimnos.Lista"
             android:label="Lista de Himnos"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="app.ejemplo.libretadehimnos.MainActivity"
             android:theme="@style/AppTheme"/>
         <meta-data
             android:name="preloaded_fonts"
